@@ -34,9 +34,9 @@ Route::get('/all_categories', 'Admin\CategoryController@index')->name('all_categ
 Route::get('/add_category', 'Admin\CategoryController@create')->name('add_category');
 Route::post('/add_category', 'Admin\CategoryController@store')->name('add_category');
 
-Route::get('/all_listings', 'Admin\ListingController@index')->name('all_listings');
-Route::get('/admin/add_listing', 'Admin\ListingController@create')->name('add_listing');
-Route::post('/admin/add_listing', 'Admin\ListingController@store')->name('add_listing');
+Route::get('/all_listings', 'Admin\ListingController@index')->name('admin_all_listings');
+Route::get('/admin/add_listing', 'Admin\ListingController@create')->name('admin_add_listing');
+Route::post('/admin/add_listing', 'Admin\ListingController@store')->name('admin_add_listing');
 
 Route::get('/best_deals', 'Admin\DealController@best_deals')->name('best_deals');
 Route::get('/popular_deals', 'Admin\DealController@popular_deals')->name('popular_deals');

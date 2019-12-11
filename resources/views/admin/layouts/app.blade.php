@@ -81,8 +81,8 @@
                   </li>
                   <li><a><i class="fa fa-table"></i> Listings <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="{{ route('all_listings') }}">All Listings</a></li>
-                      <li><a href="{{ route('add_listing') }}">Add Listing</a></li>
+                      <li><a href="{{ route('admin_all_listings') }}">All Listings</a></li>
+                      <li><a href="{{ route('admin_add_listing') }}">Add Listing</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-table"></i> All Deals <span class="fa fa-chevron-down"></span></a>

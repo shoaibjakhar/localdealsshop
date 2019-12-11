@@ -40,11 +40,7 @@
       <div class="row">
          <div class="col-xl-8 col-lg-8 col-md-8 hidden-sm top_menu_left">
             <ul>
-              @if(auth()->user())
-              
                <li><a class="active" href="{{ url('add_listing') }}">Add Listing</a></li>
-
-              @endif
             </ul>
          </div>
          <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 top_menu_left top_menu_right">

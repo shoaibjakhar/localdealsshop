@@ -19,7 +19,7 @@
                   </div>
                   <div class="x_content">
                     <br />
-                    <form action="{{ route('add_listing') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('admin_add_listing') }}" method="POST" enctype="multipart/form-data">
                       @csrf
                       <div class="item form-group">
                         <label class="col-form-label col-md-3 col-sm-3 label-align">Listing Title <span class="required">*</span>

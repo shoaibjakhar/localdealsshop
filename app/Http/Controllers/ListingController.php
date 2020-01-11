@@ -34,6 +34,18 @@ class ListingController extends Controller
      */
     public function store(Request $request)
     {
+
+        if (empty(auth()->user()->id)) {
+            return redirect('login')->with('message', "Please login to add listing");
+        }
+
+        $validated_data = $this->validate($request, [
+            'title' => 'required',
+            'image' => 'required',
+            'price' => 'required',
+            'summary' => 'required',
+        ]);
+
         $path = '';
 
         if($request->file('image')!='')

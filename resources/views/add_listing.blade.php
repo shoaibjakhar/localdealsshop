@@ -15,19 +15,33 @@
                     <div class="form-group">
                         <label>Listing title<span>*</span></label>
                         <input class="form-control" type="text" name="title" value="{{ old('title') }}" placeholder="Item Name"> 
+                        @error('title')
+                        <span class="invalid-feedback d-block" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
                     </div>
                   </div>
                   <div class="col-lg-3">
                     <div class="form-group">
                         <label>Image<span>*</span> </label>
                         <input class="form-control" type="file" name="image" value="{{ old('image') }}" > 
+                        @error('title')
+                        <span class="invalid-feedback d-block" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
                     </div>
                   </div>
                   <div class="col-lg-3">
                     <div class="form-group">
                         <label>Price<span>*</span> </label>
                         <input class="form-control" type="number" name="price" value="{{ old('price') }}" placeholder="0.00"> 
-                    </div>
+                        @error('title')
+                        <span class="invalid-feedback d-block" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror                    </div>
                   </div>
                   <div class="col-lg-3">
                     <div class="form-group">
@@ -41,6 +55,11 @@
                     <div class="form-group">
                         <label>Short summary<span>*</span> </label>
                         <textarea class="form-control" type="text" name="summary" value="{{ old('summary') }}" rows="6" placeholder="Write Short Summary..."></textarea> 
+                        @error('title')
+                        <span class="invalid-feedback d-block" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
                     </div>
                   </div>
                   <div class="col-lg-6">

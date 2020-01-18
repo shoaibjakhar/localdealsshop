@@ -14,7 +14,10 @@ class ListingController extends Controller
      */
     public function index()
     {
-        $all_listings = Listing::all();
+        $all_listings = \DB::table('listings')
+        ->join('users','listings.user_id','users.id')
+        ->join('categories','listings.category_id','categories.id')
+        ->paginate(30, array('listings.*', 'categories.title as category', 'users.first_name as created_by'));
         return view('admin.all_listings', ['all_listings' => $all_listings]);
     }
 

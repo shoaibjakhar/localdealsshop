@@ -26,13 +26,14 @@
                         <tr>
                           <th>Sr#</th>
                           <th>Title</th>
+                          <th>Category</th>
                           <th>Image</th>
                           <th>Price</th>
                           <th>Summary</th>
-                          <th>Category</th>
                           <th>Added By</th>
                           <th>Created On</th>
                           <th>Updated On</th>
+                          <th>Featured Actions</th>
                           <th>Actions</th>
                         </tr>
                       </thead>
@@ -42,13 +43,27 @@
                         <tr>
                           <td>{{ $key+1 }}</td>
                           <td>{{ $listing->title }}</td>
-                          <td><img src="{{ url('storage')}}/{{ $listing->image }}" width="50px"></td>
-                          <td>{{ $listing->price }}</td>
-                          <td>{{ $listing->summary }}</td>
                           <td>{{ $listing->category }}</td>
+                          <td><img src="{{ url('storage')}}/{{ primary_img_url($listing->image) }}" width="50px"></td>
+                          <td>{{ $listing->price }}</td>
+                          <td>{{ str_limit($listing->summary, 20) }}</td>
                           <td>{{ $listing->created_by }}</td>
                           <td>{{ $listing->created_at }}</td>
                           <td>{{ $listing->updated_at }}</td>
+                          <td>
+                            <div class="custom-control custom-checkbox">
+                              <input type="checkbox" class="custom-control-input" {{($listing->best_deal == 1) ? 'checked':''}} id="best{{$listing->id}}" onclick="update_deal('best_deal', '{{$listing->id}}', 'best{{$listing->id}}')">
+                              <label class="custom-control-label" for="best{{$listing->id}}">Best</label>
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" {{($listing->popular_deal == 1) ? 'checked':''}} id="popular{{$listing->id}}" onclick="update_deal('popular_deal', '{{$listing->id}}', 'popular{{$listing->id}}')">
+                                <label class="custom-control-label" for="popular{{$listing->id}}">Popular</label>
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" {{($listing->featured_deal == 1) ? 'checked':''}} id="featured{{$listing->id}}" onclick="update_deal('featured_deal', '{{$listing->id}}', 'featured{{$listing->id}}')">
+                                <label class="custom-control-label" for="featured{{$listing->id}}">Featured</label>
+                            </div>
+                          </td>
                           <td>
                             <a href="#" class="btn btn-info btn-xs"><i class="fa fa-eye"></i></a>
                             <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a>

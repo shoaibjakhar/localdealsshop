@@ -35,6 +35,8 @@ Route::get('/add_category', 'Admin\CategoryController@create')->name('add_catego
 Route::post('/add_category', 'Admin\CategoryController@store')->name('add_category');
 
 Route::get('/all_listings', 'Admin\ListingController@index')->name('admin_all_listings');
+Route::post('/update_deals','Admin\AjaxController@post')->name('update_deals');
+
 Route::get('/admin/add_listing', 'Admin\ListingController@create')->name('admin_add_listing');
 Route::post('/admin/add_listing', 'Admin\ListingController@store')->name('admin_add_listing');
 

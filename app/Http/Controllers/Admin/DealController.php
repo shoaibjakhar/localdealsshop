@@ -23,7 +23,12 @@ class DealController extends Controller
      */
     public function best_deals()
     {
-        return view('admin.best_deals');
+        $best_deals_listings = \DB::table('listings')
+        ->join('users','listings.user_id','users.id')
+        ->join('categories','listings.category_id','categories.id')
+        ->where('best_deal',1)
+        ->paginate(30, array('listings.*', 'categories.title as category', 'users.first_name as created_by'));
+        return view('admin.best_deals', ['best_deals_listings' => $best_deals_listings]);
     }    
     /**
      * Display a listing of the resource.
@@ -32,7 +37,12 @@ class DealController extends Controller
      */
     public function popular_deals()
     {
-        return view('admin.popular_deals');
+        $popular_deals_listings = \DB::table('listings')
+        ->join('users','listings.user_id','users.id')
+        ->join('categories','listings.category_id','categories.id')
+        ->where('popular_deal',1)
+        ->paginate(30, array('listings.*', 'categories.title as category', 'users.first_name as created_by'));
+        return view('admin.popular_deals', ['popular_deals_listings' => $popular_deals_listings]);
     }    
     /**
      * Display a listing of the resource.
@@ -41,7 +51,12 @@ class DealController extends Controller
      */
     public function featured_deals()
     {
-        return view('admin.featured_deals');
+        $featured_deals_listings = \DB::table('listings')
+        ->join('users','listings.user_id','users.id')
+        ->join('categories','listings.category_id','categories.id')
+        ->where('featured_deal',1)
+        ->paginate(30, array('listings.*', 'categories.title as category', 'users.first_name as created_by'));
+        return view('admin.featured_deals', ['featured_deals_listings' => $featured_deals_listings]);
     }
 
     /**

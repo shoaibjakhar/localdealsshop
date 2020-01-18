@@ -42,7 +42,7 @@
                         <tr>
                           <td>{{ $key+1 }}</td>
                           <td>{{ $listing->title }}</td>
-                          <td><img src="{{ url('storage')}}/{{ $listing->image }}" width="50px"></td>
+                          <td><img src="{{ url('storage')}}/{{ primary_img_url($listing->image) }}" width="50px"></td>
                           <td>{{ $listing->price }}</td>
                           <td>{{ $listing->summary }}</td>
                           <td>{{ $listing->category }}</td>

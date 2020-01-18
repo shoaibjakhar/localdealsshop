@@ -27,15 +27,14 @@
                           
                           <!-- The slideshow -->
                           <div class="carousel-inner">
-                            <div class="carousel-item active">
-                              <img src="{{ url('storage')}}/{{ $listing_data->image }}" alt="Los Angeles" width="1100" height="500">
-                            </div>
-                            <div class="carousel-item">
-                              <img src="{{ url('storage')}}/{{ $listing_data->image }}" alt="Chicago" width="1100" height="500">
-                            </div>
-                            <div class="carousel-item">
-                              <img src="{{ url('storage')}}/{{ $listing_data->image }}" alt="Chicago" width="1100" height="500">
-                            </div>
+                            
+                            @if( urls_array($listing_data->image) )
+                              @foreach(urls_array($listing_data->image) as $key => $url)
+                              <div class="carousel-item {{ ($loop->first) ? 'active':'' }} ">
+                                <img src="{{ url('storage')}}/{{ ($url) ?? '' }}" alt="Los Angeles" width="1100" height="500">
+                              </div>
+                              @endforeach
+                            @endif
                             
                           </div>
                           
@@ -180,7 +179,7 @@
                             <p>5,000+ bought</p>
                           </div>
                           <div class="col-sm-6 time_ago">
-                            <p>$0</p>
+                            <p>${{ number_format($listing_data->price, 2) }}</p>
                           </div>
                         </div>
                       </li>
@@ -193,7 +192,7 @@
                             <p>1,000+ bought</p>
                           </div>
                           <div class="col-sm-6 time_ago">
-                            <p>$0</p>
+                            <p>${{ number_format($listing_data->price, 2) }}</p>
                           </div>
                         </div>
                       </li>

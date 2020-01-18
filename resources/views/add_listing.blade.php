@@ -24,8 +24,26 @@
                   </div>
                   <div class="col-lg-3">
                     <div class="form-group">
-                        <label>Image<span>*</span> </label>
-                        <input class="form-control" type="file" name="image" value="{{ old('image') }}" > 
+                        <label>Listing Category<span>*</span></label>
+                        <select class="form-control" name="category_id" value="">
+                          <option value="">Choose Category</option>
+                          @if(!empty($all_categories))
+                            @foreach($all_categories as $category)
+                          <option value="{{ $category->id }}">{{ $category->title }}</option>
+                            @endforeach
+                          @endif
+                        </select>
+                        @error('category_id')
+                        <span class="invalid-feedback d-block" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                    </div>
+                  </div>
+                  <div class="col-lg-3">
+                    <div class="form-group">
+                        <label>Image<span>* (can add multiple)</span> </label>
+                        <input class="form-control" type="file" name="image[]" value="{{ old('image') }}" multiple> 
                         @error('title')
                         <span class="invalid-feedback d-block" role="alert">
                             <strong>{{ $message }}</strong>

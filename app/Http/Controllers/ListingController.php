@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Listing;
+use App\Admin\Category;
 class ListingController extends Controller
 {
     /**
@@ -23,7 +24,8 @@ class ListingController extends Controller
      */
     public function create()
     {
-        return view('add_listing');
+        $all_categories = Category::all();
+        return view('add_listing', ['all_categories' => $all_categories]);
     }
 
     /**
@@ -40,28 +42,33 @@ class ListingController extends Controller
         }
 
         $validated_data = $this->validate($request, [
-            'title' => 'required',
-            'image' => 'required',
-            'price' => 'required',
-            'summary' => 'required',
+            'title'         => 'required',
+            'category_id'   => 'required',
+            'image'         => 'required',
+            'price'         => 'required',
+            'summary'       => 'required',
         ]);
 
-        $path = '';
+        $path = array();
 
-        if($request->file('image')!='')
+        if($files = $request->file('image'))
 
-            $path = $request->file('image')->store('assets/frontend/images', 'public');
+            foreach ($files as $file) {
+                
+                $path[] = $file->store('assets/frontend/images', 'public');
 
+            }
             
 
             $listing = new Listing;
 
             $listing->user_id       = auth()->user()->id;
             $listing->title         = $request->title;
-            $listing->image         = $path;
+            $listing->category_id   = $request->category_id;
+            $listing->image         = implode("|", $path);
             $listing->price         = $request->price;
             $listing->summary       = $request->summary;
-            $listing->discount       = $request->discount;
+            $listing->discount      = $request->discount;
             $listing->description   = $request->description;
 
             $listing->save();
@@ -113,5 +120,13 @@ class ListingController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function listing_detail($id)
+    {
+
+        $listing_data = Listing::findorfail($id);
+
+        return view('listing_detail', ['listing_data' => $listing_data]);
     }
 }

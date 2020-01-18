@@ -60,24 +60,26 @@
       <div class="col-sm-4 recent_box">
         <div class="shadow_boxs">
           <div class="recent_img">
-            <img src="{{ url('storage')}}/{{ $data['all_listings'][0]['image'] }}">
+            <img src="{{ url('storage')}}/{{ $data['all_listings'][0]->image }}">
+            @if(isset($data['listings'][0]->discount) && $data['listings'][0]->discount > 0)
             <div class="discount_offer">
-               <p>43% OFF</p>
-            </div>
+               <p>{{ $data['all_listings'][0]->discount }}% OFF</p>
+            </div>a
+            @endif
           </div>
           <div class="recent_post_info">
-            <h4>{{ $data['all_listings'][0]['title'] }}</h4>
+            <h4>{{ $data['all_listings'][0]->title }}</h4>
             <p>Free 3-Month Subscription to Pandora Premium</p>
             <div class="cui-price" data-pingdom-id="deal-price">
-               <div class="cui-price-original c-txt-gray-dk">${{ number_format($data['all_listings'][0]['price'], 2) }}</div>&nbsp;
+               <div class="cui-price-original c-txt-gray-dk">${{ number_format($data['all_listings'][0]->price, 2) }}</div>&nbsp;
                <!-- <div class="cui-price-discount c-txt-price">Free</div> -->
             </div>
             <div class="row">
               <div class="col-sm-1 user_avatar">
-                <img src="{{ asset('assets/frontend/images/avatar5824685.jpg') }}">
+                <img src="{{ $data['all_listings'][0]->profile_image }}">
               </div>
               <div class="col-sm-7 user_rating">
-                <h5>Mark Freeman</h5>
+                <h5>{{ $data['all_listings'][0]->first_name }}</h5>
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
@@ -85,7 +87,7 @@
                 <i class="fa fa-star-half-o"></i>
               </div>
               <div class="col-sm-4 plus_reviews">
-                <a href="{{ route('listing_detail' , $data['all_listings'][0]['id'] ) }}">Get Coupon</a>
+                <a href="{{ route('listing_detail' , $data['all_listings'][0]->id ) }}">Get Coupon</a>
               </div>
             </div>
             <b>How to deal with Mondays. Works everytime :D...</b>
@@ -94,8 +96,8 @@
                 <img src="{{ asset('assets/frontend/images/thumbsup.png') }}">
               </div>
               <div class="col-sm-6 time_ago">
-                <?php $created = \Carbon\Carbon::createFromTimeStamp(strtotime($data['all_listings'][0]['created_at'])); ?>
-                <p>{{ $created->diff(\Carbon\Carbon::now())->format('%h hours and %i minutes') }}</p>
+                <?php $created = \Carbon\Carbon::createFromTimeStamp(strtotime($data['all_listings'][0]->created_at)); ?>
+                <p>{{ $created ->diff(\Carbon\Carbon::now())->format('%h hours and %i minutes') }}</p>
               </div>
             </div>
           </div>
@@ -106,24 +108,26 @@
       <div class="col-sm-4 recent_box">
         <div class="shadow_boxs">
           <div class="recent_img">
-            <img src="{{ url('storage')}}/{{ $data['all_listings'][1]['image'] }}">
+            <img src="{{ url('storage')}}/{{ $data['all_listings'][1]->image }}">
+            @if(isset($data['listings'][1]->discount) && $data['listings'][1]->discount > 0)
             <div class="discount_offer">
-               <p>48% OFF</p>
+               <p>{{ $data['all_listings'][1]->discount }}% OFF</p>
             </div>
+            @endif
           </div>
           <div class="recent_post_info">
-            <h4>{{ $data['all_listings'][1]['title'] }}</h4>
+            <h4>{{ $data['all_listings'][1]->title }}</h4>
             <p>160+ bought</p>
             <div class="cui-price" data-pingdom-id="deal-price">
-               <div class="cui-price-original c-txt-gray-dk">${{ number_format($data['all_listings'][1]['price'], 2) }}</div>&nbsp;
+               <div class="cui-price-original c-txt-gray-dk">${{ number_format($data['all_listings'][1]->price, 2) }}</div>&nbsp;
                <!-- <div class="cui-price-discount c-txt-price">Free</div> -->
             </div>
             <div class="row">
               <div class="col-sm-1 user_avatar">
-                <img src="{{ asset('assets/frontend/images/avatar125.jpg') }}">
+                <img src="{{ $data['all_listings'][1]->profile_image }}">
               </div>
               <div class="col-sm-7 user_rating">
-                <h5>Nathan Thomas</h5>
+                <h5>{{ $data['all_listings'][1]->first_name }}</h5>
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
@@ -131,7 +135,7 @@
                 <i class="fa fa-star-half-o"></i>
               </div>
               <div class="col-sm-4 plus_reviews">
-                <a href="{{ route('listing_detail' , $data['all_listings'][1]['id'] ) }}">Get Coupon</a>
+                <a href="{{ route('listing_detail' , $data['all_listings'][1]->id ) }}">Get Coupon</a>
               </div>
             </div>
             <b>Best ! </b>
@@ -140,7 +144,7 @@
                 <img src="{{ asset('assets/frontend/images/thumbsup.png') }}">
               </div>
               <div class="col-sm-6 time_ago">
-                <?php $created = \Carbon\Carbon::createFromTimeStamp(strtotime($data['all_listings'][1]['created_at'])); ?>
+                <?php $created = \Carbon\Carbon::createFromTimeStamp(strtotime($data['all_listings'][1]->created_at)); ?>
                 <p>{{ $created ->diff(\Carbon\Carbon::now())->format('%h hours and %i minutes') }}</p>
               </div>
             </div>
@@ -153,24 +157,26 @@
       <div class="col-sm-4 recent_box">
         <div class="shadow_boxs">
           <div class="recent_img">
-            <img src="{{ url('storage')}}/{{ $data['all_listings'][2]['image'] }}">
+            <img src="{{ url('storage')}}/{{ $data['all_listings'][2]->image }}">
+            @if(isset($data['listings'][2]->discount) && $data['listings'][2]->discount > 0)
             <div class="discount_offer">
-               <p>43% OFF</p>
+               <p>{{ $data['all_listings'][2]->discount }}% OFF</p>
             </div>
+            @endif
           </div>
           <div class="recent_post_info">
-            <h4>{{ $data['all_listings'][2]['title'] }}</h4>
+            <h4>{{ $data['all_listings'][2]->title }}</h4>
             <p>Free 60-Day from Daily Burn</p>
             <div class="cui-price" data-pingdom-id="deal-price">
-               <div class="cui-price-original c-txt-gray-dk">${{ number_format($data['all_listings'][2]['price'], 2) }}</div>&nbsp;
+               <div class="cui-price-original c-txt-gray-dk">${{ number_format($data['all_listings'][2]->price, 2) }}</div>&nbsp;
                <div class="cui-price-discount c-txt-price">Free</div>
             </div>
             <div class="row">
               <div class="col-sm-1 user_avatar">
-                <img src="{{ asset('assets/frontend/images/avatar1.jpg') }}">
+                <img src="{{ $data['all_listings'][2]->profile_image }}">
               </div>
               <div class="col-sm-7 user_rating">
-                <h5>Andras Palmer</h5>
+                <h5>{{ $data['all_listings'][2]->first_name }}</h5>
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
@@ -178,7 +184,7 @@
                 <i class="fa fa-star-half-o"></i>
               </div>
               <div class="col-sm-4 plus_reviews">
-                <a href="{{ route('listing_detail' , $data['all_listings'][2]['id'] ) }}">Get Coupon</a>
+                <a href="{{ route('listing_detail' , $data['all_listings'][2]->id ) }}">Get Coupon</a>
               </div>
             </div>
             <b>Excellent hotel of this class...best experience...</b>
@@ -187,7 +193,7 @@
                 <img src="{{ asset('assets/frontend/images/thumbsup.png') }}">
               </div>
               <div class="col-sm-6 time_ago">
-                <?php $created = \Carbon\Carbon::createFromTimeStamp(strtotime($data['all_listings'][2]['created_at'])); ?>
+                <?php $created = \Carbon\Carbon::createFromTimeStamp(strtotime($data['all_listings'][2]->created_at)); ?>
                 <p>{{ $created ->diff(\Carbon\Carbon::now())->format('%h hours and %i minutes') }}</p>
               </div>
             </div>
@@ -202,27 +208,29 @@
       <div class="col-sm-4 recent_box">
         <div class="shadow_boxs inner_gapp">
           <div class="recent_img">
-            <img src="{{ url('storage')}}/{{ $data['all_listings'][3]['image'] }}">
+            <img src="{{ url('storage')}}/{{ $data['all_listings'][3]->image }}">
+            @if(isset($data['listings'][3]->discount) && $data['listings'][3]->discount > 0)
             <div class="discount_offer">
-               <p>30% OFF</p>
+               <p>{{ $data['all_listings'][3]->discount }}% OFF</p>
             </div>
+            @endif
           </div>
           <div class="thums_img">
             <p><img src="{{ asset('assets/frontend/images/thumbsup.png') }}"> 9 Like</p>
           </div>
           <div class="recent_post_info">
-            <h4>{{ $data['all_listings'][3]['title'] }}</h4>
+            <h4>{{ $data['all_listings'][3]->title }}</h4>
             <p>Hotels</p>
             <div class="cui-price" data-pingdom-id="deal-price">
-               <div class="cui-price-original c-txt-gray-dk">${{ number_format($data['all_listings'][3]['price'], 2) }}</div>&nbsp;
+               <div class="cui-price-original c-txt-gray-dk">${{ number_format($data['all_listings'][3]->price, 2) }}</div>&nbsp;
                <!-- <div class="cui-price-discount c-txt-price">Free</div> -->
             </div>
             <div class="row">
               <div class="col-sm-1 user_avatar">
-                <img src="{{ asset('assets/frontend/images/avatar1254785.jpg') }}">
+                <img src="{{ $data['all_listings'][3]->profile_image }}">
               </div>
               <div class="col-sm-11 user_rating">
-                <h5>Mark Freeman</h5>
+                <h5>{{ $data['all_listings'][3]->first_name }}</h5>
                 <h6>Added 1 photo</h6>
               </div>
               
@@ -236,10 +244,12 @@
       <div class="col-sm-4 recent_box">
         <div class="shadow_boxs inner_gapp">
           <div class="recent_img">
+            @if(isset($data['listings'][4]->discount) && $data['listings'][4]->discount > 0)
             <div class="discount_offer">
-               <p>53% OFF</p>
+               <p>{{ $data['all_listings'][4]->discount }}% OFF</p>
             </div>
-            <img src="{{ url('storage')}}/{{ $data['all_listings'][4]['image'] }}">
+            @endif
+            <img src="{{ url('storage')}}/{{ urls_array($data['all_listings'][4]->image)[0] }}">
           </div>
           <div class="thums_img">
             <p><img src="{{ asset('assets/frontend/images/thumbsup.png') }}"> 9 views</p>
@@ -247,7 +257,7 @@
           <div class="row">
             <div class="col-sm-6 left_recent right_gap">
               <div class="recent_img">
-                <img src="{{ asset('assets/frontend/images/recent582.jpg') }}">
+                <img src="{{ url('storage')}}/{{ urls_array($data['all_listings'][4]->image)[1] }}">
               </div>
               <div class="thums_img">
                 <p><img src="{{ asset('assets/frontend/images/thumbsup.png') }}"> 9 views</p>
@@ -255,7 +265,7 @@
             </div>
             <div class="col-sm-6 left_recent">
               <div class="recent_img">
-                <img src="{{ asset('assets/frontend/images/recent5287.jpg') }}">
+                <img src="{{ url('storage')}}/{{ urls_array($data['all_listings'][4]->image)[2] }}">
               </div>
               <div class="thums_img">
                 <p><img src="{{ asset('assets/frontend/images/thumbsup.png') }}"> 9 views</p>
@@ -266,18 +276,18 @@
             <p>Show all 18 photos</p>
           </div>
           <div class="recent_post_info">
-            <h4>{{ $data['all_listings'][4]['title'] }} </h4>
+            <h4>{{ $data['all_listings'][4]->title }} </h4>
             <p> Food Delivery Services, Bakeries, Desserts</p>
             <div class="cui-price" data-pingdom-id="deal-price">
-               <div class="cui-price-original c-txt-gray-dk">${{ number_format($data['all_listings'][4]['price'], 2) }}</div>&nbsp;
+               <div class="cui-price-original c-txt-gray-dk">${{ number_format($data['all_listings'][4]->price, 2) }}</div>&nbsp;
                <!-- <div class="cui-price-discount c-txt-price">Free</div> -->
             </div>
             <div class="row">
               <div class="col-sm-1 user_avatar">
-                <img src="{{ asset('assets/frontend/images/avatar12568.jpg') }}">
+                <img src="{{ $data['all_listings'][4]->profile_image }}">
               </div>
               <div class="col-sm-11 user_rating">
-                <h5>Mark Freeman</h5>
+                <h5>{{ $data['all_listings'][4]->first_name }}</h5>
                 <h6>Added 1 photo</h6>
               </div>
               
@@ -292,24 +302,26 @@
       <div class="col-sm-4 recent_box">
         <div class="shadow_boxs">
           <div class="recent_img">
-            <img src="{{ url('storage')}}/{{ $data['all_listings'][5]['image'] }}">
+            <img src="{{ url('storage')}}/{{ $data['all_listings'][5]->image }}">
+            @if(isset($data['listings'][5]->discount) && $data['listings'][5]->discount > 0)
             <div class="discount_offer">
-               <p>15% OFF</p>
+               <p>{{ $data['all_listings'][5]->discount }}% OFF</p>
             </div>
+            @endif
           </div>
           <div class="recent_post_info">
-            <h4>{{ $data['all_listings'][5]['title'] }}</h4>
+            <h4>{{ $data['all_listings'][5]->title }}</h4>
             <p>Restaurants</p>
             <div class="cui-price" data-pingdom-id="deal-price">
-               <div class="cui-price-original c-txt-gray-dk">${{ number_format($data['all_listings'][5]['price'], 2) }}</div>&nbsp;
+               <div class="cui-price-original c-txt-gray-dk">${{ number_format($data['all_listings'][5]->price, 2) }}</div>&nbsp;
                <!-- <div class="cui-price-discount c-txt-price">Free</div> -->
             </div>
             <div class="row">
               <div class="col-sm-1 user_avatar">
-                <img src="{{ asset('assets/frontend/images/avatar1.jpg') }}">
+                <img src="{{ $data['all_listings'][0]->profile_image }}">
               </div>
               <div class="col-sm-7 user_rating">
-                <h5>Nathan Thomas</h5>
+                <h5>{{ $data['all_listings'][5]->first_name }}</h5>
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
@@ -317,7 +329,7 @@
                 <i class="fa fa-star-half-o"></i>
               </div>
               <div class="col-sm-4 plus_reviews">
-                <a href="{{ route('listing_detail' , $data['all_listings'][5]['id'] ) }}">Get Coupon</a>
+                <a href="{{ route('listing_detail' , $data['all_listings'][5]->id ) }}">Get Coupon</a>
               </div>
             </div>
             <b>I thought I'd just shoot two birds with
@@ -333,7 +345,7 @@
                 <img src="{{ asset('assets/frontend/images/thumbsup.png') }}">
               </div>
               <div class="col-sm-6 time_ago">
-                <?php $created = \Carbon\Carbon::createFromTimeStamp(strtotime($data['all_listings'][5]['created_at'])); ?>
+                <?php $created = \Carbon\Carbon::createFromTimeStamp(strtotime($data['all_listings'][5]->created_at)); ?>
                 <p>{{ $created ->diff(\Carbon\Carbon::now())->format('%h hours and %i minutes') }}</p>
               </div>
             </div>
@@ -351,6 +363,7 @@
   </div>
 </section>
 
+<!-- Popular Deals -->
 
 <section class="recent_activity">
   <div class="container">
@@ -362,24 +375,26 @@
       <div class="col-sm-4 recent_box">
         <div class="shadow_boxs">
           <div class="recent_img">
-            <img src="{{ url('storage')}}/{{ $data['all_listings'][0]['image'] }}">
+            <img src="{{ url('storage')}}/{{ $data['all_listings'][0]->image }}">
+            @if(isset($data['listings'][0]->discount) && $data['listings'][0]->discount > 0)
             <div class="discount_offer">
-               <p>43% OFF</p>
-            </div>
+               <p>{{ $data['all_listings'][0]->discount }}% OFF</p>
+            </div>a
+            @endif
           </div>
           <div class="recent_post_info">
-            <h4>{{ $data['all_listings'][0]['title'] }}</h4>
+            <h4>{{ $data['all_listings'][0]->title }}</h4>
             <p>Free 3-Month Subscription to Pandora Premium</p>
             <div class="cui-price" data-pingdom-id="deal-price">
-               <div class="cui-price-original c-txt-gray-dk">${{ number_format($data['all_listings'][0]['price'], 2) }}</div>&nbsp;
+               <div class="cui-price-original c-txt-gray-dk">${{ number_format($data['all_listings'][0]->price, 2) }}</div>&nbsp;
                <!-- <div class="cui-price-discount c-txt-price">Free</div> -->
             </div>
             <div class="row">
               <div class="col-sm-1 user_avatar">
-                <img src="{{ asset('assets/frontend/images/avatar5824685.jpg') }}">
+                <img src="{{ $data['all_listings'][0]->profile_image }}">
               </div>
               <div class="col-sm-7 user_rating">
-                <h5>Mark Freeman</h5>
+                <h5>{{ $data['all_listings'][0]->first_name }}</h5>
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
@@ -387,7 +402,7 @@
                 <i class="fa fa-star-half-o"></i>
               </div>
               <div class="col-sm-4 plus_reviews">
-                <a href="{{ route('listing_detail' , $data['all_listings'][0]['id'] ) }}">Get Coupon</a>
+                <a href="{{ route('listing_detail' , $data['all_listings'][0]->id ) }}">Get Coupon</a>
               </div>
             </div>
             <b>How to deal with Mondays. Works everytime :D...</b>
@@ -396,7 +411,7 @@
                 <img src="{{ asset('assets/frontend/images/thumbsup.png') }}">
               </div>
               <div class="col-sm-6 time_ago">
-                <?php $created = \Carbon\Carbon::createFromTimeStamp(strtotime($data['all_listings'][0]['created_at'])); ?>
+                <?php $created = \Carbon\Carbon::createFromTimeStamp(strtotime($data['all_listings'][0]->created_at)); ?>
                 <p>{{ $created ->diff(\Carbon\Carbon::now())->format('%h hours and %i minutes') }}</p>
               </div>
             </div>
@@ -408,24 +423,26 @@
       <div class="col-sm-4 recent_box">
         <div class="shadow_boxs">
           <div class="recent_img">
-            <img src="{{ url('storage')}}/{{ $data['all_listings'][1]['image'] }}">
+            <img src="{{ url('storage')}}/{{ $data['all_listings'][1]->image }}">
+            @if(isset($data['listings'][1]->discount) && $data['listings'][1]->discount > 0)
             <div class="discount_offer">
-               <p>48% OFF</p>
+               <p>{{ $data['all_listings'][1]->discount }}% OFF</p>
             </div>
+            @endif
           </div>
           <div class="recent_post_info">
-            <h4>{{ $data['all_listings'][1]['title'] }}</h4>
+            <h4>{{ $data['all_listings'][1]->title }}</h4>
             <p>160+ bought</p>
             <div class="cui-price" data-pingdom-id="deal-price">
-               <div class="cui-price-original c-txt-gray-dk">${{ number_format($data['all_listings'][1]['price'], 2) }}</div>&nbsp;
+               <div class="cui-price-original c-txt-gray-dk">${{ number_format($data['all_listings'][1]->price, 2) }}</div>&nbsp;
                <!-- <div class="cui-price-discount c-txt-price">Free</div> -->
             </div>
             <div class="row">
               <div class="col-sm-1 user_avatar">
-                <img src="{{ asset('assets/frontend/images/avatar125.jpg') }}">
+                <img src="{{ $data['all_listings'][1]->profile_image }}">
               </div>
               <div class="col-sm-7 user_rating">
-                <h5>Nathan Thomas</h5>
+                <h5>{{ $data['all_listings'][1]->first_name }}</h5>
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
@@ -433,7 +450,7 @@
                 <i class="fa fa-star-half-o"></i>
               </div>
               <div class="col-sm-4 plus_reviews">
-                <a href="{{ route('listing_detail' , $data['all_listings'][1]['id'] ) }}">Get Coupon</a>
+                <a href="{{ route('listing_detail' , $data['all_listings'][1]->id ) }}">Get Coupon</a>
               </div>
             </div>
             <b>Best ! </b>
@@ -442,7 +459,7 @@
                 <img src="{{ asset('assets/frontend/images/thumbsup.png') }}">
               </div>
               <div class="col-sm-6 time_ago">
-                <?php $created = \Carbon\Carbon::createFromTimeStamp(strtotime($data['all_listings'][1]['created_at'])); ?>
+                <?php $created = \Carbon\Carbon::createFromTimeStamp(strtotime($data['all_listings'][1]->created_at)); ?>
                 <p>{{ $created ->diff(\Carbon\Carbon::now())->format('%h hours and %i minutes') }}</p>
               </div>
             </div>
@@ -455,24 +472,26 @@
       <div class="col-sm-4 recent_box">
         <div class="shadow_boxs">
           <div class="recent_img">
-            <img src="{{ url('storage')}}/{{ $data['all_listings'][2]['image'] }}">
+            <img src="{{ url('storage')}}/{{ $data['all_listings'][2]->image }}">
+            @if(isset($data['listings'][2]->discount) && $data['listings'][2]->discount > 0)
             <div class="discount_offer">
-               <p>43% OFF</p>
+               <p>{{ $data['all_listings'][2]->discount }}% OFF</p>
             </div>
+            @endif
           </div>
           <div class="recent_post_info">
-            <h4>{{ $data['all_listings'][2]['title'] }}</h4>
+            <h4>{{ $data['all_listings'][2]->title }}</h4>
             <p>Free 60-Day from Daily Burn</p>
             <div class="cui-price" data-pingdom-id="deal-price">
-               <div class="cui-price-original c-txt-gray-dk">${{ number_format($data['all_listings'][2]['price'], 2) }}</div>&nbsp;
+               <div class="cui-price-original c-txt-gray-dk">${{ number_format($data['all_listings'][2]->price, 2) }}</div>&nbsp;
                <div class="cui-price-discount c-txt-price">Free</div>
             </div>
             <div class="row">
               <div class="col-sm-1 user_avatar">
-                <img src="{{ asset('assets/frontend/images/avatar1.jpg') }}">
+                <img src="{{ $data['all_listings'][2]->profile_image }}">
               </div>
               <div class="col-sm-7 user_rating">
-                <h5>Andras Palmer</h5>
+                <h5>{{ $data['all_listings'][2]->first_name }}</h5>
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
@@ -480,7 +499,7 @@
                 <i class="fa fa-star-half-o"></i>
               </div>
               <div class="col-sm-4 plus_reviews">
-                <a href="{{ route('listing_detail' , $data['all_listings'][2]['id'] ) }}">Get Coupon</a>
+                <a href="{{ route('listing_detail' , $data['all_listings'][2]->id ) }}">Get Coupon</a>
               </div>
             </div>
             <b>Excellent hotel of this class...best experience...</b>
@@ -489,7 +508,7 @@
                 <img src="{{ asset('assets/frontend/images/thumbsup.png') }}">
               </div>
               <div class="col-sm-6 time_ago">
-                <?php $created = \Carbon\Carbon::createFromTimeStamp(strtotime($data['all_listings'][2]['created_at'])); ?>
+                <?php $created = \Carbon\Carbon::createFromTimeStamp(strtotime($data['all_listings'][2]->created_at)); ?>
                 <p>{{ $created ->diff(\Carbon\Carbon::now())->format('%h hours and %i minutes') }}</p>
               </div>
             </div>
@@ -504,27 +523,29 @@
       <div class="col-sm-4 recent_box">
         <div class="shadow_boxs inner_gapp">
           <div class="recent_img">
-            <img src="{{ url('storage')}}/{{ $data['all_listings'][3]['image'] }}">
+            <img src="{{ url('storage')}}/{{ $data['all_listings'][3]->image }}">
+            @if(isset($data['listings'][3]->discount) && $data['listings'][3]->discount > 0)
             <div class="discount_offer">
-               <p>30% OFF</p>
+               <p>{{ $data['all_listings'][3]->discount }}% OFF</p>
             </div>
+            @endif
           </div>
           <div class="thums_img">
             <p><img src="{{ asset('assets/frontend/images/thumbsup.png') }}"> 9 Like</p>
           </div>
           <div class="recent_post_info">
-            <h4>{{ $data['all_listings'][3]['title'] }}</h4>
+            <h4>{{ $data['all_listings'][3]->title }}</h4>
             <p>Hotels</p>
             <div class="cui-price" data-pingdom-id="deal-price">
-               <div class="cui-price-original c-txt-gray-dk">${{ number_format($data['all_listings'][3]['price'], 2) }}</div>&nbsp;
+               <div class="cui-price-original c-txt-gray-dk">${{ number_format($data['all_listings'][3]->price, 2) }}</div>&nbsp;
                <!-- <div class="cui-price-discount c-txt-price">Free</div> -->
             </div>
             <div class="row">
               <div class="col-sm-1 user_avatar">
-                <img src="{{ asset('assets/frontend/images/avatar1254785.jpg') }}">
+                <img src="{{ $data['all_listings'][3]->profile_image }}">
               </div>
               <div class="col-sm-11 user_rating">
-                <h5>Mark Freeman</h5>
+                <h5>{{ $data['all_listings'][3]->first_name }}</h5>
                 <h6>Added 1 photo</h6>
               </div>
               
@@ -538,10 +559,12 @@
       <div class="col-sm-4 recent_box">
         <div class="shadow_boxs inner_gapp">
           <div class="recent_img">
+            @if(isset($data['listings'][4]->discount) && $data['listings'][4]->discount > 0)
             <div class="discount_offer">
-               <p>53% OFF</p>
+               <p>{{ $data['all_listings'][4]->discount }}% OFF</p>
             </div>
-            <img src="{{ url('storage')}}/{{ $data['all_listings'][4]['image'] }}">
+            @endif
+            <img src="{{ url('storage')}}/{{ urls_array($data['all_listings'][4]->image)[0] }}">
           </div>
           <div class="thums_img">
             <p><img src="{{ asset('assets/frontend/images/thumbsup.png') }}"> 9 views</p>
@@ -549,7 +572,7 @@
           <div class="row">
             <div class="col-sm-6 left_recent right_gap">
               <div class="recent_img">
-                <img src="{{ asset('assets/frontend/images/recent582.jpg') }}">
+                <img src="{{ url('storage')}}/{{ urls_array($data['all_listings'][4]->image)[1] }}">
               </div>
               <div class="thums_img">
                 <p><img src="{{ asset('assets/frontend/images/thumbsup.png') }}"> 9 views</p>
@@ -557,7 +580,7 @@
             </div>
             <div class="col-sm-6 left_recent">
               <div class="recent_img">
-                <img src="{{ asset('assets/frontend/images/recent5287.jpg') }}">
+                <img src="{{ url('storage')}}/{{ urls_array($data['all_listings'][4]->image)[2] }}">
               </div>
               <div class="thums_img">
                 <p><img src="{{ asset('assets/frontend/images/thumbsup.png') }}"> 9 views</p>
@@ -568,18 +591,18 @@
             <p>Show all 18 photos</p>
           </div>
           <div class="recent_post_info">
-            <h4>{{ $data['all_listings'][4]['title'] }} </h4>
+            <h4>{{ $data['all_listings'][4]->title }} </h4>
             <p> Food Delivery Services, Bakeries, Desserts</p>
             <div class="cui-price" data-pingdom-id="deal-price">
-               <div class="cui-price-original c-txt-gray-dk">${{ number_format($data['all_listings'][4]['price'], 2) }}</div>&nbsp;
+               <div class="cui-price-original c-txt-gray-dk">${{ number_format($data['all_listings'][4]->price, 2) }}</div>&nbsp;
                <!-- <div class="cui-price-discount c-txt-price">Free</div> -->
             </div>
             <div class="row">
               <div class="col-sm-1 user_avatar">
-                <img src="{{ asset('assets/frontend/images/avatar12568.jpg') }}">
+                <img src="{{ $data['all_listings'][4]->profile_image }}">
               </div>
               <div class="col-sm-11 user_rating">
-                <h5>Mark Freeman</h5>
+                <h5>{{ $data['all_listings'][4]->first_name }}</h5>
                 <h6>Added 1 photo</h6>
               </div>
               
@@ -594,24 +617,26 @@
       <div class="col-sm-4 recent_box">
         <div class="shadow_boxs">
           <div class="recent_img">
-            <img src="{{ url('storage')}}/{{ $data['all_listings'][5]['image'] }}">
+            <img src="{{ url('storage')}}/{{ $data['all_listings'][5]->image }}">
+            @if(isset($data['listings'][5]->discount) && $data['listings'][5]->discount > 0)
             <div class="discount_offer">
-               <p>15% OFF</p>
+               <p>{{ $data['all_listings'][5]->discount }}% OFF</p>
             </div>
+            @endif
           </div>
           <div class="recent_post_info">
-            <h4>{{ $data['all_listings'][5]['title'] }}</h4>
+            <h4>{{ $data['all_listings'][5]->title }}</h4>
             <p>Restaurants</p>
             <div class="cui-price" data-pingdom-id="deal-price">
-               <div class="cui-price-original c-txt-gray-dk">${{ number_format($data['all_listings'][5]['price'], 2) }}</div>&nbsp;
+               <div class="cui-price-original c-txt-gray-dk">${{ number_format($data['all_listings'][5]->price, 2) }}</div>&nbsp;
                <!-- <div class="cui-price-discount c-txt-price">Free</div> -->
             </div>
             <div class="row">
               <div class="col-sm-1 user_avatar">
-                <img src="{{ asset('assets/frontend/images/avatar1.jpg') }}">
+                <img src="{{ $data['all_listings'][0]->profile_image }}">
               </div>
               <div class="col-sm-7 user_rating">
-                <h5>Nathan Thomas</h5>
+                <h5>{{ $data['all_listings'][5]->first_name }}</h5>
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
@@ -619,7 +644,7 @@
                 <i class="fa fa-star-half-o"></i>
               </div>
               <div class="col-sm-4 plus_reviews">
-                <a href="{{ route('listing_detail' , $data['all_listings'][5]['id'] ) }}">Get Coupon</a>
+                <a href="{{ route('listing_detail' , $data['all_listings'][5]->id ) }}">Get Coupon</a>
               </div>
             </div>
             <b>I thought I'd just shoot two birds with
@@ -635,7 +660,7 @@
                 <img src="{{ asset('assets/frontend/images/thumbsup.png') }}">
               </div>
               <div class="col-sm-6 time_ago">
-                <?php $created = \Carbon\Carbon::createFromTimeStamp(strtotime($data['all_listings'][5]['created_at'])); ?>
+                <?php $created = \Carbon\Carbon::createFromTimeStamp(strtotime($data['all_listings'][5]->created_at)); ?>
                 <p>{{ $created ->diff(\Carbon\Carbon::now())->format('%h hours and %i minutes') }}</p>
               </div>
             </div>
@@ -652,6 +677,4 @@
   </div>
   </div>
 </section>
-
 @endsection
-

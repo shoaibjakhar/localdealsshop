@@ -19,9 +19,9 @@ Route::get('/profile', 				'HomeController@index')->name('profile');
 
 Route::get('/add_listing', 			'ListingController@create')->name('add_listing');
 Route::post('/add_listing', 		'ListingController@store')->name('add_listing');
+Route::get('/listing_detail/{id}', 	'ListingController@listing_detail')->name('listing_detail');
 
 Route::get('/listings', 			'HomeController@listings')->name('listings');
-Route::get('/listing_detail/{id}', 	'HomeController@listing_detail')->name('listing_detail');
 
 Route::get('/buyings', 				'HomeController@buyings')->name('buyings');
 Route::get('/sellings', 			'HomeController@sellings')->name('sellings');

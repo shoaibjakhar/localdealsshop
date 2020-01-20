@@ -74,13 +74,13 @@
                       <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-table"></i> Categories <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-list-alt"></i> Categories <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="{{ route('all_categories') }}">All Categories</a></li>
                       <li><a href="{{ route('add_category') }}">Add Category</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-table"></i> Listings <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-product-hunt"></i> Listings <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="{{ route('admin_all_listings') }}">All Listings</a></li>
                       <li><a href="{{ route('admin_add_listing') }}">Add Listing</a></li>
@@ -97,6 +97,12 @@
                     <ul class="nav child_menu">
                       <li><a href="{{ route('pending_users') }}">Pending Users</a></li>
                       <li><a href="{{ route('approved_users') }}">Approved Users</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-eye"></i> Coupons/Phone Clicks <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="#">Coupons Clicks</a></li>
+                      <li><a href="#">Phone Clicks</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-desktop"></i> Membership Plan <span class="fa fa-chevron-down"></span></a>

@@ -204,8 +204,17 @@
                         <input type="checkbox" class="custom-control-input" id="defaultUnchecked203">
                         <label class="custom-control-label" for="defaultUnchecked203"> Email me a copy of this message</label>
                         </div> -->
+                        @guest
+                        <a href="{{ route('login') }}">
+                          <button type="submit" class="btn btn-primary btn-block" ><i class="fa fa-gift"></i> Get Coupon</button>
+                          
+                          <button type="submit" class="btn btn-primary btn-block" ><i class="fa fa-phone"></i> Call Now</button>
+                        </a>
+                        @else
                         <button type="submit" class="btn btn-primary btn-block" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-gift"></i> Get Coupon</button>
+
                         <button type="submit" class="btn btn-primary btn-block" data-toggle="modal" data-target="#phoneModel"><i class="fa fa-phone"></i> Call Now</button>
+                        @endguest
                       </div>
                       
                     </div>  

@@ -28,7 +28,9 @@ class LandingPageController extends Controller
 
         // all listigns
         
-        $all_listings = \DB::table('listings')->join('users','listings.user_id','users.id')->get();
+        $all_listings = \DB::table('listings AS l')->join('users as u','l.user_id','u.id')
+        ->select('l.*','u.first_name','u.profile_image')
+        ->get();
         $data['all_listings'] = $all_listings->toArray();
         return view('index', ['data' => $data]);
     }

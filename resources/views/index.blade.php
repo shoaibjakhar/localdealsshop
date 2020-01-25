@@ -59,6 +59,7 @@
     @if(!empty($data['all_listings'][0]))
       <div class="col-sm-4 recent_box">
         <div class="shadow_boxs">
+          <a href="{{ route('listing_detail', $data['all_listings'][0]->id) }}">
           <div class="recent_img">
             <img src="{{ url('storage')}}/{{ $data['all_listings'][0]->image }}">
             @if(isset($data['listings'][0]->discount) && $data['listings'][0]->discount > 0)
@@ -67,6 +68,7 @@
             </div>a
             @endif
           </div>
+        </a>
           <div class="recent_post_info">
             <h4>{{ $data['all_listings'][0]->title }}</h4>
             <p>Free 3-Month Subscription to Pandora Premium</p>
@@ -107,6 +109,7 @@
     @if(!empty($data['all_listings'][1]))
       <div class="col-sm-4 recent_box">
         <div class="shadow_boxs">
+          <a href="{{ route('listing_detail', $data['all_listings'][1]->id) }}">
           <div class="recent_img">
             <img src="{{ url('storage')}}/{{ $data['all_listings'][1]->image }}">
             @if(isset($data['listings'][1]->discount) && $data['listings'][1]->discount > 0)
@@ -115,6 +118,7 @@
             </div>
             @endif
           </div>
+        </a>
           <div class="recent_post_info">
             <h4>{{ $data['all_listings'][1]->title }}</h4>
             <p>160+ bought</p>
@@ -156,6 +160,7 @@
 
       <div class="col-sm-4 recent_box">
         <div class="shadow_boxs">
+          <a href="{{ route('listing_detail', $data['all_listings'][2]->id) }}">
           <div class="recent_img">
             <img src="{{ url('storage')}}/{{ $data['all_listings'][2]->image }}">
             @if(isset($data['listings'][2]->discount) && $data['listings'][2]->discount > 0)
@@ -164,6 +169,7 @@
             </div>
             @endif
           </div>
+        </a>
           <div class="recent_post_info">
             <h4>{{ $data['all_listings'][2]->title }}</h4>
             <p>Free 60-Day from Daily Burn</p>
@@ -207,6 +213,7 @@
     @if(!empty($data['all_listings'][3]))
       <div class="col-sm-4 recent_box">
         <div class="shadow_boxs inner_gapp">
+          <a href="{{ route('listing_detail', $data['all_listings'][3]->id) }}">
           <div class="recent_img">
             <img src="{{ url('storage')}}/{{ $data['all_listings'][3]->image }}">
             @if(isset($data['listings'][3]->discount) && $data['listings'][3]->discount > 0)
@@ -215,6 +222,7 @@
             </div>
             @endif
           </div>
+        </a>
           <div class="thums_img">
             <p><img src="{{ asset('assets/frontend/images/thumbsup.png') }}"> 9 Like</p>
           </div>
@@ -301,6 +309,7 @@
 
       <div class="col-sm-4 recent_box">
         <div class="shadow_boxs">
+          <a href="{{ route('listing_detail', $data['all_listings'][5]->id) }}">
           <div class="recent_img">
             <img src="{{ url('storage')}}/{{ $data['all_listings'][5]->image }}">
             @if(isset($data['listings'][5]->discount) && $data['listings'][5]->discount > 0)
@@ -309,6 +318,7 @@
             </div>
             @endif
           </div>
+        </a>
           <div class="recent_post_info">
             <h4>{{ $data['all_listings'][5]->title }}</h4>
             <p>Restaurants</p>
@@ -374,6 +384,7 @@
     @if(!empty($data['all_listings'][0]))
       <div class="col-sm-4 recent_box">
         <div class="shadow_boxs">
+          <a href="{{ route('listing_detail', $data['all_listings'][0]->id) }}">
           <div class="recent_img">
             <img src="{{ url('storage')}}/{{ $data['all_listings'][0]->image }}">
             @if(isset($data['listings'][0]->discount) && $data['listings'][0]->discount > 0)
@@ -382,6 +393,7 @@
             </div>a
             @endif
           </div>
+        </a>
           <div class="recent_post_info">
             <h4>{{ $data['all_listings'][0]->title }}</h4>
             <p>Free 3-Month Subscription to Pandora Premium</p>
@@ -422,6 +434,7 @@
     @if(!empty($data['all_listings'][1]))
       <div class="col-sm-4 recent_box">
         <div class="shadow_boxs">
+          <a href="{{ route('listing_detail', $data['all_listings'][1]->id) }}">
           <div class="recent_img">
             <img src="{{ url('storage')}}/{{ $data['all_listings'][1]->image }}">
             @if(isset($data['listings'][1]->discount) && $data['listings'][1]->discount > 0)
@@ -430,6 +443,7 @@
             </div>
             @endif
           </div>
+        </a>
           <div class="recent_post_info">
             <h4>{{ $data['all_listings'][1]->title }}</h4>
             <p>160+ bought</p>
@@ -471,6 +485,7 @@
 
       <div class="col-sm-4 recent_box">
         <div class="shadow_boxs">
+          <a href="{{ route('listing_detail', $data['all_listings'][2]->id) }}">
           <div class="recent_img">
             <img src="{{ url('storage')}}/{{ $data['all_listings'][2]->image }}">
             @if(isset($data['listings'][2]->discount) && $data['listings'][2]->discount > 0)
@@ -479,6 +494,7 @@
             </div>
             @endif
           </div>
+        </a>
           <div class="recent_post_info">
             <h4>{{ $data['all_listings'][2]->title }}</h4>
             <p>Free 60-Day from Daily Burn</p>
@@ -522,6 +538,7 @@
     @if(!empty($data['all_listings'][3]))
       <div class="col-sm-4 recent_box">
         <div class="shadow_boxs inner_gapp">
+          <a href="{{ route('listing_detail', $data['all_listings'][3]->id) }}">
           <div class="recent_img">
             <img src="{{ url('storage')}}/{{ $data['all_listings'][3]->image }}">
             @if(isset($data['listings'][3]->discount) && $data['listings'][3]->discount > 0)
@@ -530,6 +547,7 @@
             </div>
             @endif
           </div>
+        </a>
           <div class="thums_img">
             <p><img src="{{ asset('assets/frontend/images/thumbsup.png') }}"> 9 Like</p>
           </div>
@@ -616,6 +634,7 @@
 
       <div class="col-sm-4 recent_box">
         <div class="shadow_boxs">
+          <a href="{{ route('listing_detail', $data['all_listings'][5]->id) }}">
           <div class="recent_img">
             <img src="{{ url('storage')}}/{{ $data['all_listings'][5]->image }}">
             @if(isset($data['listings'][5]->discount) && $data['listings'][5]->discount > 0)
@@ -624,6 +643,7 @@
             </div>
             @endif
           </div>
+        </a>
           <div class="recent_post_info">
             <h4>{{ $data['all_listings'][5]->title }}</h4>
             <p>Restaurants</p>

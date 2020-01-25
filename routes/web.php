@@ -47,6 +47,11 @@ Route::get('/featured_deals', 'Admin\DealController@featured_deals')->name('feat
 Route::get('/pending_users', 'Admin\UserController@pending_users')->name('pending_users');
 Route::get('/approved_users', 'Admin\UserController@approved_users')->name('approved_users');
 
+Route::get('/all_coupons', 'Admin\CouponsController@index')->name('all_coupons');
+Route::get('/generate_coupons', 'Admin\CouponsController@create')->name('generate_coupons');
+Route::post('/add_coupons', 'Admin\CouponsController@store')->name('add_coupons');
+Route::get('/purchased_coupons', 'Admin\CouponsController@purchased_coupons')->name('purchased_coupons');
+
 Route::get('/plans', 'Admin\MembershipController@plans')->name('plans');
 Route::get('/all_users', 'Admin\MembershipController@all_users')->name('all_users');
 Route::get('/expired_users', 'Admin\MembershipController@expired_users')->name('expired_users');

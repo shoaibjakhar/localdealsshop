@@ -99,6 +99,13 @@
                       <li><a href="{{ route('approved_users') }}">Approved Users</a></li>
                     </ul>
                   </li>
+                  <li><a><i class="fa fa-gift"></i> CouponsManagement <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="{{ route('all_coupons') }}">All Coupons</a></li>
+                      <li><a href="{{ route('generate_coupons') }}">Generate Coupons</a></li>
+                      <li><a href="{{ route('purchased_coupons') }}">Purchased Coupons</a></li>
+                    </ul>
+                  </li>
                   <li><a><i class="fa fa-eye"></i> Coupons/Phone Clicks <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="#">Coupons Clicks</a></li>

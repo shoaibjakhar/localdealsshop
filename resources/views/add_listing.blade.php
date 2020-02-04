@@ -86,6 +86,12 @@
                         <textarea class="form-control" name="description" value="{{ old('description') }}" rows="6" placeholder="Write Detailed Description..."></textarea>
                     </div>
                   </div>
+                  <div class="col-lg-3">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" name="is_coupon_enabled" class="custom-control-input" id="is_coupon_enabled" {{(old('is_coupon_enabled') == 'on') ? 'checked':''}}>
+                        <label class="custom-control-label" for="is_coupon_enabled">Enable Coupon</label>
+                    </div>
+                  </div>
 
                   <div class="col-lg-12">
                     <div class="form-group">

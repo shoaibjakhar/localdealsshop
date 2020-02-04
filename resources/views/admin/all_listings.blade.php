@@ -30,6 +30,7 @@
                           <th>Image</th>
                           <th>Price</th>
                           <th>Summary</th>
+                          <th>Coupon Enabled</th>
                           <th>Added By</th>
                           <th>Created On</th>
                           <th>Updated On</th>
@@ -45,8 +46,9 @@
                           <td>{{ $listing->title }}</td>
                           <td>{{ $listing->category }}</td>
                           <td><img src="{{ url('storage')}}/{{ primary_img_url($listing->image) }}" width="50px"></td>
-                          <td>{{ $listing->price }}</td>
+                          <td>{{ number_format($listing->price, 2) }}</td>
                           <td>{{ str_limit($listing->summary, 20) }}</td>
+                          <td>{{ ($listing->is_coupon_enabled == 1) ? "Yes" : "No" }}</td>
                           <td>{{ $listing->created_by }}</td>
                           <td>{{ $listing->created_at }}</td>
                           <td>{{ $listing->updated_at }}</td>

@@ -70,6 +70,7 @@ class ListingController extends Controller
             $listing->summary       = $request->summary;
             $listing->discount      = $request->discount;
             $listing->description   = $request->description;
+            $listing->is_coupon_enabled = ($request->is_coupon_enabled == "on") ? 1 :0;
 
             $listing->save();
             
@@ -126,7 +127,15 @@ class ListingController extends Controller
     {
 
         $listing_data = Listing::findorfail($id);
+        if ($listing_data->is_coupon_enabled == 1) {
+        	
+        $coupon_details 	= \DB::table('coupons')
+	        ->join('listings','coupons.user_id_belongs_to','listings.user_id')
+	        ->where(['coupons.user_id_belongs_to' => $listing_data->user_id, 'customer_id_used_by'=> null, 'is_wasted'=> 0 ])
+	        ->paginate(1, array('coupons.coupon_number'));
 
-        return view('listing_detail', ['listing_data' => $listing_data]);
+        }
+
+        return view('listing_detail', ['listing_data' => $listing_data, 'coupon_details' => $coupon_details]);
     }
 }

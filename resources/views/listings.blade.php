@@ -29,6 +29,8 @@
                             <th>ID</th>
                             <th>Image</th>
                             <th>Price</th>
+                            <th>Discount</th>
+                            <th>Coupon Enabled</th>
                             <th>Date</th>
                             <th>Status</th>
                             <th class="text-center">Options</th>
@@ -42,7 +44,9 @@
                             <td>{{ $listing->id }}</td>
                             <td>
                                 <img src="{{ url('storage')}}/{{ $listing->image }}" class="img-thumbnail" width="30px"></td>
-                            <td>{{ $listing->price }}</td>
+                            <td>${{ number_format($listing->price, 2) }}</td>
+                            <td>${{ number_format($listing->discount, 2) }}</td>
+                            <td>{{ ($listing->is_coupon_enabled == 1) ? "Yes" : 'No' }}</td>
                             <td>{{ $listing->created_at }}</td>
                             <td>Pending</td>
                             <td  class="text-center invoice"><a href="{{ route('listing_detail', $listing->id) }}" class="btn btn-sm btn-primary"> <i class="fa fa-file"></i> View</a> </td>

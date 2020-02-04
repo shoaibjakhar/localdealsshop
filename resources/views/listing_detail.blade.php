@@ -682,8 +682,14 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-        <i class="fa fa-gift"></i> <?php echo rand(10000,100000); ?>
+      <div class="modal-body row">
+        <div class="col-sm-6">
+          <i class="fa fa-gift"></i> <span id="foo">{{ $coupon_details[0]->coupon_number }} </span>
+          <span class="copied_clipboard alert-success" style="display: none; margin-left: 5px"></span>
+        </div>
+        <div class="col-sm-6">
+          <button class="btn btn-info copy_to_clipboard" data-clipboard-target="#foo">Copy</button>
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -711,7 +717,22 @@
     </div>
   </div>
 </div>
+<!-- <script src="dist/clipboard.min.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"></script>
+ <script>
+    var clipboard = new ClipboardJS('.copy_to_clipboard');
 
+    clipboard.on('success', function(e) {
+        console.log(e.text);
+
+        $('.copied_clipboard').text('copied').show().delay(2500).fadeOut();
+    });
+
+    clipboard.on('error', function(e) {
+        console.log(e);
+    });
+    </script>
 <script>
 
   $('#myModal').on('shown.bs.modal', function () {

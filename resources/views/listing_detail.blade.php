@@ -674,25 +674,24 @@
 
 <!-- Modal for coupon -->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 750px">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Copy Coupon Code</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body row">
-        <div class="col-sm-6">
-          <i class="fa fa-gift"></i> <span id="foo">{{ $coupon_details[0]->coupon_number }} </span>
-          <span class="copied_clipboard alert-success" style="display: none; margin-left: 5px"></span>
+      <div class="row coupon_row">
+        <div class="col-sm-5 left_col">
+          <span class="company_info">Company Name</span>
+          <h3 style="">SAVE UP TO</h3>
+          <h1>30% OFF</h1>
         </div>
-        <div class="col-sm-6">
-          <button class="btn btn-info copy_to_clipboard" data-clipboard-target="#foo">Copy</button>
+        <div class="col-sm-7 right_col">
+          <img src="{{ asset('assets/frontend/images/logo.png') }}" alt="logo" style="width:100%">
+          <h2>Copy Coupon Code</h2>
+          <span id="foo">{{ $coupon_details->coupon_number }} </span>
+          <span class="copied_clipboard" style="display: none; padding: 10px; color: #fff;"></span><br>
+          <div class="bottom_div">
+            <button class="btn copy_to_clipboard" data-clipboard-target="#foo">Copy Code</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
         </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -726,7 +725,7 @@
     clipboard.on('success', function(e) {
         console.log(e.text);
 
-        $('.copied_clipboard').text('copied').show().delay(2500).fadeOut();
+        $('.copied_clipboard').text('Copied').show().delay(2500).fadeOut();
     });
 
     clipboard.on('error', function(e) {

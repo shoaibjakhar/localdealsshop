@@ -140,7 +140,7 @@ ______________________*/
     padding: 11px 0;
 }
 .logo_fiji img {
-    width: 29%;
+    width: 100%;
     display: block;
 }
 .search_items {
@@ -170,7 +170,7 @@ ______________________*/
     position: relative;
 }
 .search_items button{
-    background: #53a318;
+    background: #ffd400;
     color: #fff;
     padding: 7px 14px;
     border-radius: 4px;
@@ -235,7 +235,7 @@ ______________________*/
     background-color: #f5f5f5;
 }
 .sidebar_menu::-webkit-scrollbar-thumb{    
-    background-color: #53a318;
+    background-color: #ffd400;
 }
 .sidebar_menu li {
     padding: 10px 24px;
@@ -296,7 +296,7 @@ ______________________*/
 }
 .feat-inner-bg {
     margin: 0 ;
-    background-color: #53a318;
+    background-color: #ffd400;
     padding: 6px 20px;
     text-align: center;
 }
@@ -365,7 +365,7 @@ ul.tabs_market .green {
     color: #333;
 }
 .market_listing li a:hover {
-    color: #53a318; 
+    color: #ffd400; 
     text-decoration: underline;
 }
 .tab-content_market .market_listing{
@@ -428,7 +428,7 @@ ul.tabs_market .green {
 .products_items b {
     display: block;
     margin-bottom: 0;
-    color: #53a318;
+    color: #ffd400;
 }
 .products_items .buy_btn,.products_items .bid_btn{
     width: 100%;
@@ -441,10 +441,10 @@ ul.tabs_market .green {
     width: 100%;
 }
 .products_items .buy_btn {
-    background: #53a318;
+    background: #ffd400;
 }
 .products_items .buy_btn:hover{
-   background: #53a318;
+   background: #ffd400;
 }
 .products_items .bid_btn {
     background: #f79122;
@@ -488,7 +488,7 @@ ul.tabs_market .green {
 .men_clothing > a{
     width: 100%;
     display: inline-block;
-    background: #53a318;
+    background: #ffd400;
     padding: 7px 15px;
     color: #fff;
     font-size: 15px;
@@ -698,7 +698,7 @@ ul.tabs_market .green {
     font-size: 15px;
 }
 .footer1-meta .copyright a {
-    color: #53a318;
+    color: #ffd400;
 }
 .cards_payments .full-info span,.payments_cards .full-info span{
     font-size: 15px;
@@ -707,7 +707,7 @@ ul.tabs_market .green {
     margin-top: 25px;
 }
 #loading{
-    background-color: #53a318;
+    background-color: #ffd400;
     height: 100%;
     width: 100%;
     position: fixed;
@@ -846,7 +846,7 @@ ul.tabs_market .green {
     color: #757575;
 }
 .signup_form p > a {
-    color: #53a318;
+    color: #ffd400;
     text-decoration: underline;
 }
 .signup_form span {
@@ -873,7 +873,7 @@ ul.tabs_market .green {
     padding: 8px;
     margin-top: 19px;
     width: 100%;
-    background: #53a318;
+    background: #ffd400;
     border: none;
     cursor: pointer;
 }
@@ -887,14 +887,14 @@ ul.tabs_market .green {
     padding-top: 10px;
 }
 .terms a{
-    color: #53a318;
+    color: #ffd400;
 }
 .top_nav ul li {
     font-size: 12px;
     display: inline-block;
 }
 .top_nav ul li .active {
-    background: #53a318;
+    background: #ffd400;
     color: #fff;
 }
 .top_nav ul li a {
@@ -906,7 +906,7 @@ ul.tabs_market .green {
     text-transform: capitalize;
 }
 .top_nav ul li a:hover{
-  background: #53a318;
+  background: #ffd400;
   color: #fff;  
 }
 .top_nav {
@@ -914,7 +914,7 @@ ul.tabs_market .green {
     padding-top: 12px;
 }
 .head_info h3{
-    background-color: #53a318;
+    background-color: #ffd400;
     color: #ffffff;
     padding: 10px 15px;
     margin-top: 17px;
@@ -926,7 +926,7 @@ ul.tabs_market .green {
     padding: 0 2px;
 }
 .prof-dash {
-    background-color: #53a318;
+    background-color: #ffd400;
     padding: 13px 20px;
     text-align: center;
     border-radius: 5px;
@@ -954,19 +954,19 @@ ul.tabs_market .green {
     font-weight: bold;
 }
 .prof-dash1 {
-    background-color: #53a318;
+    background-color: #ffd400;
 }
 .prof-dash2 {
-    background-color: #53a318;
+    background-color: #ffd400;
 }
 .prof-dash3 {
-    background-color: #53a318;
+    background-color: #ffd400;
 }
 .prof-dash4 {
-    background-color: #53a318;
+    background-color: #ffd400;
 }
 .prof-dash5 {
-    background-color: #53a318;
+    background-color: #ffd400;
 }
 .head_info{
     margin-bottom: 15px;
@@ -992,7 +992,7 @@ ul.tabs_market .green {
     background: #ffffff;
     padding: 14px 15px;
     margin-bottom: 18px;
-    border-bottom: 2px solid #53a318;
+    border-bottom: 2px solid #ffd400;
     font-weight: 400;
     font-size: 15px;
     border-radius: 5px 5px 0 0;
@@ -1033,7 +1033,7 @@ ul.tabs_market .green {
     height: auto;
     margin-bottom: 0;
     border-radius: 0;
-    background: #53a318;
+    background: #ffd400;
     border: 1px solid transparent;
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
     cursor: pointer;
@@ -1069,14 +1069,14 @@ ul.tabs_market .green {
     background-size: cover;
 }
 .avatar-upload .avatar-edit input + label:hover{
-    background: #53a318;
+    background: #ffd400;
 }
 .deposit form{
     padding: 15px
 }
 /*.btn-primary{
     border-radius: 4px;
-    background: #53a318;
+    background: #ffd400;
 }*/
 
 .transaction_table{
@@ -1118,14 +1118,14 @@ ul.tabs_market .green {
     margin-bottom: 20px !important;
 }
 .dataTable .paginate_button.current, .dataTable .paginate_button:hover {
-    background: #53a318 !important;
+    background: #ffd400 !important;
     color: #fff !important
 }
 .dataTables_wrapper .dataTables_paginate .paginate_button:hover, .dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
     color: #fff !important;
-    border: 1px solid #53a318 !important;
-    background-color: #53a318 !important;
-    background: #53a318 !important;
+    border: 1px solid #ffd400 !important;
+    background-color: #ffd400 !important;
+    background: #ffd400 !important;
 }
 
 /*privacy policy*/
@@ -1176,7 +1176,7 @@ ul.tabs_market .green {
     padding: 70px 0;
 }
 .legal-content h4   {
-    color: #53a318;
+    color: #ffd400;
     margin: 20px 0 5px;
     font-weight: normal;
 }
@@ -1206,7 +1206,7 @@ ul.tabs_market .green {
     top: 10px;
 }
 .sec-pay-box h4 {
-    color: #53a318;
+    color: #ffd400;
 }
 .sec-pay-box p {
     color: #333;
@@ -1281,7 +1281,7 @@ ul.tabs_market .green {
     width: 31%;
 }
 .category-list h4 {
-    color: #53a318;
+    color: #ffd400;
 }
 .category-list-group{
     margin: 10px 0;
@@ -1313,8 +1313,8 @@ ul.tabs_market .green {
     font-size:14px;
 }
 .filter_select ul .active a {
-    background-color: #53a318;
-    border-color: #53a318;
+    background-color: #ffd400;
+    border-color: #ffd400;
     border-radius: 1px;
     color: #fff;
 }
@@ -1385,11 +1385,11 @@ ul.tabs_market .green {
     cursor: pointer;
 }
 .product-descrip h3{
-    color: #53a318;
+    color: #ffd400;
 }
 .product-descrip .prod-price{
     font-size: 24px;
-    color: #53a318;
+    color: #ffd400;
     font-weight: bold;
 }
 .product-descrip .stock-detail{
@@ -1406,7 +1406,7 @@ ul.tabs_market .green {
     margin: 15px 0;
 }
 .prod-cat-list a{
-    color: #53a318;
+    color: #ffd400;
 }
 
 .auction-box a{
@@ -1426,7 +1426,7 @@ ul.tabs_market .green {
     left: 16px;
     font-size: 30px;
     top: 14px;
-    color: #53a318;
+    color: #ffd400;
 
 }
 .facilities p{
@@ -1518,7 +1518,7 @@ ul.tabs_market .green {
     transition: all 0.2s ease-in-out;
 }
 .sell-category i{
-    color: #53a318;
+    color: #ffd400;
     font-size: 40px;
 }
 .sell-category h4{
@@ -1611,17 +1611,17 @@ color: #847a7a;
     background: #f7fcfc8c;
 }
 .all-categories-box:hover .all-categories{
-        background: #53a318;
+        background: #ffd400;
         transition: all 0.3s ease-in-out;
 }
 .all-categories-box:hover .all-categories i{    
     background: #fff;
-    color: #53a318;
+    color: #ffd400;
     transition: all 0.3s ease-in-out;
 }
 .all-categories i{
     font-size: 30px;
-    background: #53a318;
+    background: #ffd400;
     height: 50px;
     width: 50px;
     border-radius: 100px;
@@ -1640,7 +1640,7 @@ color: #847a7a;
     margin-bottom: 15px;
 }
 .all-cat-list .category-tit {
-    color: #53a318;
+    color: #ffd400;
     margin-bottom: 15px;
     display: inline-block;
 }
@@ -1684,7 +1684,7 @@ color: #847a7a;
 }
  
 .category-choice::-webkit-scrollbar-thumb {
-  background: #53a318;
+  background: #ffd400;
   border-radius: 20px;
 }
 
@@ -1721,7 +1721,7 @@ color: #847a7a;
     display: block;
 }
 .job-posting h4 {
-    color: #53a318;
+    color: #ffd400;
     margin-bottom: 20px;
     margin-left: 15px;
 }
@@ -1753,7 +1753,7 @@ color: #847a7a;
     color: #bdb9b9;
 }
 .job-lists h4{
-    color: #53a318;
+    color: #ffd400;
 }
 .job-lists h5{
     font-size: 13px;
@@ -1835,7 +1835,7 @@ color: #847a7a;
 .motor-right h4 {
     border-bottom: 1px solid #f1f1f1;
     margin-bottom: 23px;
-    color: #53a318;
+    color: #ffd400;
     padding-bottom: 4px;
 }
 .hr{
@@ -1861,7 +1861,7 @@ color: #847a7a;
 }
 
 .apply-form .modal-header {
-    background: #53a318;
+    background: #ffd400;
     color: #fff;
     padding: 10px 15px;
 }
@@ -1895,7 +1895,7 @@ color: #847a7a;
 }
 .adv-detail h5 a{
     font-size: 13px;
-    color: #53a318;
+    color: #ffd400;
 }
 .adv-detail textarea{
     height: 120px;
@@ -1952,7 +1952,7 @@ color: #847a7a;
     font-size: 21px;
     display: inline-block;
     align-items: baseline;
-     color: #53a318;
+     color: #ffd400;
 }
 .cui-price-original {
     font-size: 21px;
@@ -1990,7 +1990,7 @@ color: #847a7a;
     text-align: right;
 }
 .plus_reviews a {
-    background: #53a318;
+    background: #ffd400;
     border-radius: 35px;
     font-size: 13px;
     display: inline-block;
@@ -2107,7 +2107,7 @@ color: #847a7a;
 }
 #adv-det .btn-primary {
     border-radius: 4px;
-    background: #53a318;
+    background: #ffd400;
     border: none;
     font-size: 14px;
     padding: 9px 0;
@@ -2178,15 +2178,15 @@ color: #847a7a;
 }
 
 .checkbox_items input[type=radio]:checked~.check {
-    border: 3px solid #53a318;
+    border: 3px solid #ffd400;
 }
 
 .checkbox_items input[type=radio]:checked~.check::before {
-    background: #53a318;
+    background: #ffd400;
 }
 
 .checkbox_items input[type=radio]:checked~label {
-    color: #53a318;
+    color: #ffd400;
 }
 
 .checkbox_items li img {
@@ -2276,7 +2276,7 @@ padding: 9px 16px;
     vertical-align: middle;
 }
 .sidegapp .time_ago p{
-    color: #53a318;
+    color: #ffd400;
     font-size: 16px;
 }
 .recent_img{
@@ -2286,7 +2286,7 @@ padding: 9px 16px;
     position: absolute;
     top: 0;
     left: 0;
-    background: #53a318;
+    background: #ffd400;
     border-radius: 0 0 14px 0;
 }
 .discount_offer p {
@@ -2298,8 +2298,8 @@ padding: 9px 16px;
 /*shoaib*/
 
 .btn-primary:hover{
-    background-color: #53a318;
-    border-color: #53a318;
+    background-color: #ffd400;
+    border-color: #ffd400;
 }
 
 /*Responsive*/
@@ -2683,4 +2683,40 @@ padding: 9px 16px;
         padding: 6px 3px;
     }
 
+}
+
+/*css new changes*/
+
+.coupon_row{
+    text-align: center;
+}
+.coupon_row .left_col{
+    padding: 50px 30px;
+    background: #454545;
+    color: #fcb040;
+}
+.left_col .company_info{
+    font-size: 30px;
+}
+.left_col h3{
+    margin-top: 30px !important;
+}
+.coupon_row .right_col{
+    padding: 50px 30px;
+    background: #ffd400;
+}
+.coupon_row .right_col h2{
+    padding-bottom: 15px;
+}
+.coupon_row .right_col #foo{
+    padding: 25px;
+    font-size: 25px;
+    font-weight: 700;
+}
+.bottom_div{
+    margin-top: 30px
+}
+.bottom_div .copy_to_clipboard{
+    background: #f1592a;
+    color: #fff;
 }

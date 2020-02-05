@@ -97,8 +97,7 @@
    <div class="container">
       <div class="row">
          <div class="col-xl-2 col-lg-2 col-md-2 logo_fiji">
-            <!-- <a href="index.html"><img src="{{ asset('assets/frontend/images/logo.png') }}" alt=""></a> -->
-            <a href="{{ url('/') }}"><img src="https://www2.grouponcdn.com/layout/assets/grpn-favicon-96x96-65e46e4853.png" alt=""></a>
+            <a href="{{ url('/') }}"><img src="{{ asset('assets/frontend/images/logo.png') }}" alt="logo"></a>
          </div>
          <div class="col-xl-10 col-lg-10 col-md-10 col-sm-12 search_items">
             <form action="">

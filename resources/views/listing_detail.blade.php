@@ -678,16 +678,18 @@
     <div class="modal-content">
       <div class="row coupon_row">
         <div class="col-sm-5 left_col">
+          <input type="hidden" id="customer_id_used_by" value="{{ auth()->id() }}">
           <span class="company_info">Company Name</span>
           <h3 style="">SAVE UP TO</h3>
           <h1>30% OFF</h1>
         </div>
         <div class="col-sm-7 right_col">
           <img src="{{ asset('assets/frontend/images/logo.png') }}" alt="logo" style="width:100%">
-          <h2>Copy Coupon Code</h2>
+          <h2>Get Coupon Code</h2>
           <span id="foo">{{ $coupon_details->coupon_number }} </span>
           <span class="copied_clipboard" style="display: none; padding: 10px; color: #fff;"></span><br>
           <div class="bottom_div">
+            <button class="btn">Download Code</button>
             <button class="btn copy_to_clipboard" data-clipboard-target="#foo">Copy Code</button>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           </div>
@@ -719,19 +721,7 @@
 <!-- <script src="dist/clipboard.min.js"></script> -->
 <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"></script>
- <script>
-    var clipboard = new ClipboardJS('.copy_to_clipboard');
 
-    clipboard.on('success', function(e) {
-        console.log(e.text);
-
-        $('.copied_clipboard').text('Copied').show().delay(2500).fadeOut();
-    });
-
-    clipboard.on('error', function(e) {
-        console.log(e);
-    });
-    </script>
 <script>
 
   $('#myModal').on('shown.bs.modal', function () {

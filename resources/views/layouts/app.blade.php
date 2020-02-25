@@ -3,6 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <title>Groupon</title>
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,600,700,800,900' rel='stylesheet' type='text/css'>
     <link id="favicon" rel="icon"  type="images/favicon.png" href="https://www2.grouponcdn.com/layout/assets/grpn-favicon-96x96-65e46e4853.png">

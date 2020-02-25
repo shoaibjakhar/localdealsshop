@@ -16,37 +16,35 @@
               <li><a href="{{ route ('profile') }}">Profile</a></li>
               <li><a href="{{ route('listings') }}">your Listings</a></li> 
               <li><a href="{{ route ('buyings') }}">Buying History</a></li>
-              <li><a class="active" href="{{ route ('sellings') }}">Selling History</a></li>
-              <li><a href="{{ route ('coupons_history') }}">Coupons History</a></li>
+              <li><a href="{{ route ('sellings') }}">Selling History</a></li>
+              <li><a class="active" href="{{ route ('coupons_history') }}">Coupons History</a></li>
            </ul>
       </div>
       <div class="row head_info">
         <div class="col-lg-12 p-0">
-            <h3>All Listings</h3>
+            <h3>All Coupons</h3>
            <div class="shadow p-3">
                 <table id="transaction" class="display" style="width:100%">
                     <thead class="mt-3">
                         <tr>
-                            <th>ID</th>
-                            <th>Image</th>
-                            <th>Price</th>
-                            <th>Date</th>
+                            <th>SR.</th>
+                            <th>Coupon Number</th>
+                            <th>Expiry Date</th>
+                            <th>Download Date</th>
                             <th>Status</th>
-                            <th class="text-center">Options</th>
                         </tr>
                     </thead>
                     <tbody>
-                      @if(!empty($listings))
-                        @foreach($listings as $listing)
+                      @if(!empty($coupons))
+                        @foreach($coupons as $coupon)
+
 
                         <tr>
-                            <td>{{ $listing->id }}</td>
-                            <td>
-                                <img src="{{ url('storage')}}/{{ $listing->image }}" class="img-thumbnail" width="30px"></td>
-                            <td>{{ $listing->price }}</td>
-                            <td>{{ $listing->created_at }}</td>
-                            <td>Pending</td>
-                            <td  class="text-center invoice"><a href="{{ route('listing_detail', $listing->id) }}" class="btn btn-sm btn-primary"> <i class="fa fa-file"></i> View</a> </td>
+                            <td>001</td>
+                            <td>{{ $coupon->coupon_number }}</td>
+                            <td>04-03-2020</td>
+                            <td>{{ $coupon->updated_at }}</td>
+                            <td>Not Used</td>
                         </tr>
                         @endforeach
                       @endif

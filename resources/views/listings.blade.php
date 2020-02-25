@@ -17,6 +17,7 @@
               <li><a class="active" href="{{ route('listings') }}">your Listings</a></li> 
               <li><a href="{{ route ('buyings') }}">Buying History</a></li>
               <li><a href="{{ route ('sellings') }}">Selling History</a></li>
+              <li><a href="{{ route ('coupons_history') }}">Coupons History</a></li>
            </ul>
       </div>
       <div class="row head_info">

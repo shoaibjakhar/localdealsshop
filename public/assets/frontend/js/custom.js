@@ -77,3 +77,41 @@ $(".make-deal").click(function() {
     }, 700);
 });
 
+// ajax request to assign coupon to customer
+var clipboard = new ClipboardJS('.copy_to_clipboard');
+
+clipboard.on('success', function(e) {
+    
+    var coupon_code         = e.text;
+    var customer_id_used_by = $('#customer_id_used_by').val();
+    var CSRF_TOKEN          = $('meta[name="csrf-token"]').attr('content');
+
+    $.ajax({
+
+      url: "http://localhost/localdealshop/public/coupon_request", // will make it dynamic in next release [TODO shoaib]
+      type: 'POST',
+      data: {
+        _token:       CSRF_TOKEN,
+        customer_id_used_by:      customer_id_used_by,
+        coupon_code:  coupon_code
+      },
+      dataType: 'JSON',
+      success: function(result){
+        
+        if (result.status == 'success') {
+
+          $('.copied_clipboard').text('Copied!').show().delay(2500).fadeOut();
+        
+        } else{
+
+          $('.copied_clipboard').text('First use previous coupon!').show().delay(3500).fadeOut();
+
+        }
+    
+    }});
+
+});
+
+clipboard.on('error', function(e) {
+    console.log(e);
+});

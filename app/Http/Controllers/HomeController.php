@@ -72,4 +72,19 @@ class HomeController extends Controller
     {
         return view('sellings');
     }
+    /**
+     * Show user coupons.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function coupons_history()
+    {
+
+        $coupons_data = \DB::table('coupons')
+            ->where('customer_id_used_by', auth()->user()->id)
+            ->get();
+
+        return view('coupons_history', ['coupons' => $coupons_data]);
+
+    }
 }

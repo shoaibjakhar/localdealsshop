@@ -115,3 +115,19 @@ clipboard.on('success', function(e) {
 clipboard.on('error', function(e) {
     console.log(e);
 });
+
+// ajax request to assign coupon to customer
+var clipboard1 = new ClipboardJS('.copy_to_clipboard1');
+
+clipboard1.on('success', function(e) {
+    
+
+          $('.copied_clipboard1').text('Copied!').show().delay(2500).fadeOut();
+
+
+
+});
+
+clipboard1.on('error', function(e) {
+    console.log(e);
+});

@@ -689,7 +689,7 @@
           <span id="foo">{{ $coupon_details->coupon_number }} </span>
           <span class="copied_clipboard" style="display: none; padding: 10px; color: #fff;"></span><br>
           <div class="bottom_div">
-            <button class="btn">Download Code</button>
+            <!-- <button class="btn">Download Code</button> -->
             <button class="btn copy_to_clipboard" data-clipboard-target="#foo">Copy Code</button>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           </div>
@@ -701,19 +701,26 @@
 
 <!-- Model for phone no -->
 <div class="modal fade" id="phoneModel" tabindex="-1" role="dialog" aria-labelledby="phoneModelTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 750px">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Agnet Phone Number</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <i class="fa fa-phone"></i> +1 32465465465
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      <div class="row coupon_row">
+        <div class="col-sm-5 left_col">
+          <input type="hidden" id="customer_id_used_by" value="{{ auth()->id() }}">
+          <span class="company_info">Company Name</span>
+          <h3 style="">SAVE UP TO</h3>
+          <h1>30% OFF</h1>
+        </div>
+        <div class="col-sm-7 right_col">
+          <img src="{{ asset('assets/frontend/images/logo.png') }}" alt="logo" style="width:100%">
+          <h2>Agnet Phone Number</h2>
+          <span id="foo1">+1 32465465465 </span>
+          <span class="copied_clipboard1" style="display: none; padding: 10px; color: #fff;"></span><br>
+          <div class="bottom_div">
+            <!-- <button class="btn">Download Code</button> -->
+            <button class="btn copy_to_clipboard1" data-clipboard-target="#foo1">Copy Phone</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>

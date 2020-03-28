@@ -44,7 +44,7 @@
                     <div class="form-group">
                         <label>Image<span>* (can add multiple)</span> </label>
                         <input class="form-control" type="file" name="image[]" value="{{ old('image') }}" multiple> 
-                        @error('title')
+                        @error('image')
                         <span class="invalid-feedback d-block" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
@@ -54,8 +54,8 @@
                   <div class="col-lg-3">
                     <div class="form-group">
                         <label>Price<span>*</span> </label>
-                        <input class="form-control" type="number" name="price" value="{{ old('price') }}" placeholder="0.00"> 
-                        @error('title')
+                        <input class="form-control" type="number" name="price" value="{{ old('price') }}" placeholder="0.00" step="0.01"> 
+                        @error('price')
                         <span class="invalid-feedback d-block" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
@@ -64,7 +64,7 @@
                   <div class="col-lg-3">
                     <div class="form-group">
                         <label>Discount Amount</label>
-                        <input class="form-control" type="text" name="discount" value="{{ old('discount') }}" placeholder="0.00"> 
+                        <input class="form-control" type="number" name="discount" value="{{ old('discount') }}" placeholder="0.00" step="0.01"> 
                     </div>
                   </div>
                 </div>
@@ -82,7 +82,7 @@
                   </div>
                   <div class="col-lg-6">
                     <div class="form-group">
-                        <label>Detailed description <span>*</span> </label>
+                        <label>Detailed description </label>
                         <textarea class="form-control" name="description" value="{{ old('description') }}" rows="6" placeholder="Write Detailed Description..."></textarea>
                     </div>
                   </div>

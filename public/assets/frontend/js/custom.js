@@ -11,6 +11,10 @@ $(document).ready(function(){
 
 });
 
+$('#imageUpload').click(function(){
+  $('#update_image').show();
+});
+
 // products tabs
 
 $(document).ready(function($) {

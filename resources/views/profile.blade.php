@@ -57,8 +57,14 @@
           <div class="row">
              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 profile_info">
               <h4>Change Your Profile Information</h4>
-                <form action="">
+                <form action="{{ route('update_profile_info') }}" method="POST">
+                  @csrf
                    <div class="user_details">
+                    @if(session('info_updated'))
+                    <div class="alert alert-success" role="alert">
+                      {{ session('info_updated') }}
+                    </div>
+                    @endif
                      <div class="row">
                        <div class="col-lg-6">
                          <input class="form-control" type="text" name="first_name" value="{{ Auth::user()->first_name }}" placeholder="">
@@ -69,7 +75,7 @@
                      </div>
                      <div class="row">
                        <div class="col-lg-6">
-                         <input class="form-control" type="email" name="email" value="{{ Auth::user()->email }}" placeholder="Email">
+                         <input class="form-control" type="email" name="email" value="{{ Auth::user()->email }}" placeholder="Email" readonly="">
                        </div>
                        <div class="col-lg-6">
                          <input class="form-control" type="text" name="phone" value="{{ Auth::user()->phone }}"  placeholder="Phone">
@@ -103,38 +109,47 @@
              </div>
              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 profile_info">
                 <h4>Change Your Password</h4>
-                <form action="">
-                   <div class="row user_details">
-                      <div class="col-lg-4 change_profile">
+                 @if(session('image_updated'))
+                    <div class="alert alert-success" role="alert">
+                      {{ session('image_updated') }}
+                    </div>
+                    @endif
+                <div class="row user_details">
+                    <div class="col-lg-4 change_profile">
+                        <form action="{{ route('update_profile_photo') }}" method="POST" enctype="multipart/form-data">
+                            @csrf
                          <div class="avatar-upload">
                               <div class="avatar-edit">
-                                  <input class="form-control" type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
+                                  <input class="form-control" type='file' name="image" id="imageUpload" accept=".png, .jpg, .jpeg" />
                                   <label for="imageUpload">Change Profile Picture</label>
                               </div>
                               <div class="avatar-preview">
-                                  <div id="imagePreview">
+                                  <div id="imagePreview" style="background: url('{{ url('storage')}}/{{ (Auth::user()->profile_image) ?? '' }}');">
                                   </div>
                               </div>
                           </div>
+                          <button class="btn btn-primary" type="submit" id="update_image" style="display: none;">Update Image</button>
+                        </form>
                       </div>
-                      <div class="col-lg-8">
-                         <div class="row">
-                           <div class="col-lg-12 m-p-0">
-                             <input class="form-control" type="text" placeholder="Old Password">
-                           </div>
-                           <div class="col-lg-12 m-p-0">
-                             <input class="form-control" type="text" placeholder="New Password">
-                           </div>
-                           <div class="col-lg-12 m-p-0">
-                             <input class="form-control" type="text" placeholder="Confirm New Password">
-                           </div>
-                              <div class="col-lg-12 m-p-0">
-                                <button class="btn btn-primary" type="submit">Update Password</button>
-                              </div>
-                         </div>
-                      </div>
-                   </div>
-                </form> 
+                    <div class="col-lg-8">
+                        <form action="">
+                            <div class="row">
+                                <div class="col-lg-12 m-p-0">
+                                    <input class="form-control" type="text" placeholder="Old Password">
+                                </div>
+                                <div class="col-lg-12 m-p-0">
+                                    <input class="form-control" type="text" placeholder="New Password">
+                                </div>
+                                <div class="col-lg-12 m-p-0">
+                                    <input class="form-control" type="text" placeholder="Confirm New Password">
+                                </div>
+                                <div class="col-lg-12 m-p-0">
+                                    <button class="btn btn-primary" type="submit">Update Password</button>
+                                </div>
+                            </div>
+                        </form> 
+                    </div>
+                </div>
              </div>
           </div>
      </div>

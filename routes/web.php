@@ -16,6 +16,8 @@ Route::get('/', 'LandingPageController@index');
 Auth::routes();
 
 Route::get('/profile', 				'HomeController@index')->name('profile');
+Route::post('/update_profile_info',  'HomeController@store')->name('update_profile_info');
+Route::post('/update_profile_photo',  'HomeController@update_profile_photo')->name('update_profile_photo');
 
 Route::get('/add_listing', 			'ListingController@create')->name('add_listing');
 Route::post('/add_listing', 		'ListingController@store')->name('add_listing');

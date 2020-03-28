@@ -28,6 +28,56 @@ class HomeController extends Controller
     }
 
     /**
+     * Update profile information.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function store(Request $request)
+    {
+
+        $data = [
+            'first_name'    => $request->first_name,
+            'last_name'     => $request->last_name,
+            'phone'         => $request->phone,
+            'city'          => $request->city,
+            'state'         => $request->state,
+            'country'       => $request->country,
+            'zip_code'      => $request->zip_code
+        ];
+
+        $updated = \DB::table('users')
+                    ->where('id', auth()->user()->id)
+                    ->update($data);
+
+        return redirect('profile')->with('info_updated', "Data updated successfully.");
+    }    
+    
+    /**
+     * Update profile information.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function update_profile_photo(Request $request)
+    {
+    
+        $validated_data = $this->validate($request, [
+            'image' => 'required',
+        ]);
+
+        $path = array();
+
+        if($file = $request->file('image'))
+
+            $path = $file->store('assets/frontend/images', 'public');
+
+             $updated = \DB::table('users')
+                    ->where('id', auth()->user()->id)
+                    ->update(['profile_image' => $path]);
+
+        return redirect('profile')->with('image_updated', "Profile Image updated successfully.");
+    }
+
+    /**
      * Show user listigns.
      *
      * @return \Illuminate\Contracts\Support\Renderable

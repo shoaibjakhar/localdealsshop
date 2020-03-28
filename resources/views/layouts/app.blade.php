@@ -6,7 +6,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <title>Groupon</title>
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,600,700,800,900' rel='stylesheet' type='text/css'>
-    <link id="favicon" rel="icon"  type="images/favicon.png" href="https://www2.grouponcdn.com/layout/assets/grpn-favicon-96x96-65e46e4853.png">
+    <link id="favicon" rel="icon"  type="images/favicon.png" href="{{ asset('/assets/frontend/images/favicon.svg') }}">
     <link type="text/css" rel="stylesheet" href="{{ asset('/assets/frontend/css/font-awesome.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('/assets/frontend/css/bootstrap.min.css') }}">
     <!-- listings page css -->

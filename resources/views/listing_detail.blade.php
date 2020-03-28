@@ -258,7 +258,7 @@
    </div>
 </div> -->
 
-<section class="recent_activity">
+<!-- <section class="recent_activity">
   <div class="container">
     <div class="blog_head">
       <h4>Recent Items</h4>
@@ -670,7 +670,7 @@
     </a>
   </div>
   </div>
-</section>
+</section> -->
 
 <!-- Modal for coupon -->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -686,7 +686,7 @@
         <div class="col-sm-7 right_col">
           <img src="{{ asset('assets/frontend/images/logo.png') }}" alt="logo" style="width:100%">
           <h2>Get Coupon Code</h2>
-          <span id="foo">{{ $coupon_details->coupon_number }} </span>
+          <span id="foo">{{ isset($coupon_details->coupon_number) ? $coupon_details->coupon_number :'' }} </span>
           <span class="copied_clipboard" style="display: none; padding: 10px; color: #fff;"></span><br>
           <div class="bottom_div">
             <!-- <button class="btn">Download Code</button> -->
@@ -713,7 +713,7 @@
         <div class="col-sm-7 right_col">
           <img src="{{ asset('assets/frontend/images/logo.png') }}" alt="logo" style="width:100%">
           <h2>Agnet Phone Number</h2>
-          <span id="foo1">+1 32465465465 </span>
+          <span id="foo1">{{ isset($listing_data->phone) ? $listing_data->phone :'' }} </span>
           <span class="copied_clipboard1" style="display: none; padding: 10px; color: #fff;"></span><br>
           <div class="bottom_div">
             <!-- <button class="btn">Download Code</button> -->

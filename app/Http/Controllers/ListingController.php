@@ -126,7 +126,12 @@ class ListingController extends Controller
     public function listing_detail($id)
     {
 
-        $listing_data = Listing::findorfail($id);
+        $listing_data = \DB::table('listings')
+                ->where('listings.id', $id)
+                ->join('users','listings.user_id','users.id')
+                ->select('listings.*', 'users.phone')
+                ->get()
+                ->first();
 
 			$coupon_details = \DB::table('coupons')
 				->join('listings','coupons.user_id_belongs_to','listings.user_id')

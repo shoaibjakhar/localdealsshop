@@ -90,6 +90,19 @@ clipboard.on('success', function(e) {
     var customer_id_used_by = $('#customer_id_used_by').val();
     var CSRF_TOKEN          = $('meta[name="csrf-token"]').attr('content');
 
+    if (coupon_code == '') {
+
+      $('.copied_clipboard').text('No coupon found').show().delay(2500).fadeOut();
+      return false;
+    
+    }
+    if (customer_id_used_by == '') {
+
+      $('.copied_clipboard').text('Something went wrong, Please contact support!').show().delay(2500).fadeOut();
+      return false;
+
+    }
+
     $.ajax({
 
       url: "http://localhost/localdealshop/public/coupon_request", // will make it dynamic in next release [TODO shoaib]

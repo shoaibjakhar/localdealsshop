@@ -94,6 +94,11 @@ class CouponsController extends Controller
         $customer_id_used_by    = $request->customer_id_used_by;
         $coupon_code            = $request->coupon_code;
 
+        $validated_data = $this->validate($request, [
+            'customer_id_used_by'   => 'required',
+            'coupon_code'           => 'required'
+        ]);
+
         $result = \DB::table('coupons')
             ->where('customer_id_used_by', $customer_id_used_by)
             ->get('id');

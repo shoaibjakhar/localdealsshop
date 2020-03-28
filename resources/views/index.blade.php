@@ -78,7 +78,7 @@
             </div>
             <div class="row">
               <div class="col-sm-1 user_avatar">
-                <img src="{{ $data['all_listings'][0]->profile_image }}">
+                <img src="{{ url('storage')}}/{{ ($data['all_listings'][0]->profile_image) ?? '' }}">
               </div>
               <div class="col-sm-7 user_rating">
                 <h5>{{ $data['all_listings'][0]->first_name }}</h5>
@@ -128,7 +128,7 @@
             </div>
             <div class="row">
               <div class="col-sm-1 user_avatar">
-                <img src="{{ $data['all_listings'][1]->profile_image }}">
+                <img src="{{ url('storage') }}/{{ $data['all_listings'][1]->profile_image }}">
               </div>
               <div class="col-sm-7 user_rating">
                 <h5>{{ $data['all_listings'][1]->first_name }}</h5>
@@ -179,7 +179,7 @@
             </div>
             <div class="row">
               <div class="col-sm-1 user_avatar">
-                <img src="{{ $data['all_listings'][2]->profile_image }}">
+                <img src="{{ url('storage') }}/{{ $data['all_listings'][2]->profile_image }}">
               </div>
               <div class="col-sm-7 user_rating">
                 <h5>{{ $data['all_listings'][2]->first_name }}</h5>
@@ -235,7 +235,7 @@
             </div>
             <div class="row">
               <div class="col-sm-1 user_avatar">
-                <img src="{{ $data['all_listings'][3]->profile_image }}">
+                <img src="{{ url('storage') }}/{{ $data['all_listings'][3]->profile_image }}">
               </div>
               <div class="col-sm-11 user_rating">
                 <h5>{{ $data['all_listings'][3]->first_name }}</h5>
@@ -292,7 +292,7 @@
             </div>
             <div class="row">
               <div class="col-sm-1 user_avatar">
-                <img src="{{ $data['all_listings'][4]->profile_image }}">
+                <img src="{{ url('storage') }}/{{ $data['all_listings'][4]->profile_image }}">
               </div>
               <div class="col-sm-11 user_rating">
                 <h5>{{ $data['all_listings'][4]->first_name }}</h5>
@@ -328,7 +328,7 @@
             </div>
             <div class="row">
               <div class="col-sm-1 user_avatar">
-                <img src="{{ $data['all_listings'][0]->profile_image }}">
+                <img src="{{ url('storage') }}/{{ $data['all_listings'][0]->profile_image }}">
               </div>
               <div class="col-sm-7 user_rating">
                 <h5>{{ $data['all_listings'][5]->first_name }}</h5>
@@ -403,7 +403,7 @@
             </div>
             <div class="row">
               <div class="col-sm-1 user_avatar">
-                <img src="{{ $data['all_listings'][0]->profile_image }}">
+                <img src="{{ url('storage') }}/{{ $data['all_listings'][0]->profile_image }}">
               </div>
               <div class="col-sm-7 user_rating">
                 <h5>{{ $data['all_listings'][0]->first_name }}</h5>
@@ -453,7 +453,7 @@
             </div>
             <div class="row">
               <div class="col-sm-1 user_avatar">
-                <img src="{{ $data['all_listings'][1]->profile_image }}">
+                <img src="{{ url('storage') }}/{{ $data['all_listings'][1]->profile_image }}">
               </div>
               <div class="col-sm-7 user_rating">
                 <h5>{{ $data['all_listings'][1]->first_name }}</h5>
@@ -504,7 +504,7 @@
             </div>
             <div class="row">
               <div class="col-sm-1 user_avatar">
-                <img src="{{ $data['all_listings'][2]->profile_image }}">
+                <img src="{{ url('storage') }}/{{ $data['all_listings'][2]->profile_image }}">
               </div>
               <div class="col-sm-7 user_rating">
                 <h5>{{ $data['all_listings'][2]->first_name }}</h5>
@@ -560,7 +560,7 @@
             </div>
             <div class="row">
               <div class="col-sm-1 user_avatar">
-                <img src="{{ $data['all_listings'][3]->profile_image }}">
+                <img src="{{ url('storage') }}/{{ $data['all_listings'][3]->profile_image }}">
               </div>
               <div class="col-sm-11 user_rating">
                 <h5>{{ $data['all_listings'][3]->first_name }}</h5>
@@ -617,7 +617,7 @@
             </div>
             <div class="row">
               <div class="col-sm-1 user_avatar">
-                <img src="{{ $data['all_listings'][4]->profile_image }}">
+                <img src="{{ url('storage') }}/{{ $data['all_listings'][4]->profile_image }}">
               </div>
               <div class="col-sm-11 user_rating">
                 <h5>{{ $data['all_listings'][4]->first_name }}</h5>
@@ -653,7 +653,7 @@
             </div>
             <div class="row">
               <div class="col-sm-1 user_avatar">
-                <img src="{{ $data['all_listings'][0]->profile_image }}">
+                <img src="{{ url('storage') }}/{{ $data['all_listings'][0]->profile_image }}">
               </div>
               <div class="col-sm-7 user_rating">
                 <h5>{{ $data['all_listings'][5]->first_name }}</h5>
